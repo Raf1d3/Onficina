@@ -19,7 +19,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 6rem;
+    padding: 0.625rem 6rem;
 }
 
 .nav-itens {
@@ -52,6 +52,7 @@ header {
 
 .nav-item {
     margin: 0 16px;
+
 }
 
 .nav-link {
@@ -59,7 +60,89 @@ header {
     font-size: 1.15rem;
     color: rgb(0, 0, 0);
     font-weight: 400;
+    display: flex;
+    align-items: center;
 }
+
+/* Mudando cor dos elementos quando hover */
+.nav-link:hover {
+    color: blue;
+}
+
+.nav-link:hover .icon-arraw{
+    border-top: 2px solid blue;
+    border-left: 2px solid blue;
+}
+
+/* Estilizando e alinhando arrow de soluções */
+.icon-arraw {
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    transform: rotate(223deg);
+}
+
+.solucoes-icon {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.solucoes-icon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Alinhando submenu */
+.menu {
+    position: absolute;
+    top: calc(30px + 30px);
+    right: 10;
+    width: 200px;
+    min-height: 100px;
+    background: #e8eaed;
+    box-shadow: 0px 3px 2px #464646;
+    border-radius: 3px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu  {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+/* Triangulo que fica encima do menu */
+
+
+.link-menu {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li {
+    padding: 15px 20px;
+    transition: 0s;
+}
+
+.menu ul li:hover {
+    background-color: #e8dada;
+}
+
 
 /* Estilizando botão de entrar do login */
 .login-button button {
@@ -123,10 +206,12 @@ header {
     .mobile-menu ul {
         display: flex;
         flex-direction: column;
-        text-align: center;
+        align-items: center;
         padding-bottom: 1rem;
         list-style: none;
     }
+
+    
 
     .mobile-menu .nav-item {
         display: block;

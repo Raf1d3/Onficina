@@ -14,3 +14,10 @@ function menuShow() {
         iconMobile.style.transform = 'rotate(180deg)';
     }
 }
+
+const solucoes =  document.querySelector('#solucoes');
+const menu = document.querySelector('.menu');
+
+solucoes.onclick = () => {
+    menu.classList.toggle('ativo')
+}
