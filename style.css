@@ -12,6 +12,10 @@
 header {
     background-color: #ffffff;
     box-shadow: 0px 3px 10px #464646;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 /* Centralizando navegação (nav) */
@@ -98,7 +102,7 @@ header {
 }
 
 
-/* Alinhando submenu */
+/* Alinhando submenu e ajustando visibilidade */
 .menu {
     position: absolute;
     top: calc(30px + 30px);
@@ -122,8 +126,6 @@ header {
     flex-direction: column;
     text-align: center;
 }
-/* Triangulo que fica encima do menu */
-
 
 .link-menu {
     text-decoration: none;
@@ -150,6 +152,7 @@ header {
     background-color: #000000;
     padding: 10px 15px;
     border-radius: 5px;
+    margin-left: 10px;
 }
 
 .login-button button a {
@@ -157,6 +160,20 @@ header {
     color: white;
     font-weight: 500;
     font-size: 1.1rem;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+}
+
+.cadastre {
+    margin-right: 16px;
+}
+
+.cadastre:hover {
+    color: blue;
+    cursor: pointer;
 }
 
 /* Defindo tamanho e posicionamento do icon*/ 
@@ -175,7 +192,7 @@ header {
 }
 
 /* Definindo quando as estilizações mobile devem aparecer */
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 1140px) {
     /* Redefinindo espaçamento da nav */
     .nav-bar {
 
@@ -230,4 +247,70 @@ header {
     .open {
         display: block;
     }
+}
+
+/*Main*/
+.main-section {
+    background-color: #1c3326;
+    height: 657.200px;
+}
+
+.main-section-secundary {
+    background-color: aqua;
+    height: 616px;
+}
+
+.main-section-third {
+    background-color: blueviolet;
+    height: 1023.2px;
+}
+
+.main-section-sucess {
+    background-color: #DC143C;
+    height: 507.2px;
+}
+
+.main-section-using {
+    background-color: coral;
+    height: 1687.2px;
+}
+
+.main-section-honor {
+    background-color: rgb(80, 255, 100);
+    height: 600.8px;
+}
+
+.main-section-maximize {
+    background-color: rgb(255, 80, 208);
+    height: 636.8px;
+}
+
+.main-section-movement {
+    background-color: rgb(80, 255, 197);
+    height: 488.450px;
+}
+
+.main-section-salesblazers {
+    background-color: #FFFF00;
+    height: 931.6px;
+}
+
+.main-section-keep {
+    background-color: #B0E0E6;
+    height: 859.13px;
+}
+
+.main-section-ready {
+    background-color: #E6E6FA;
+    height: 771.6px;
+}
+
+.main-section-top-footer {
+    background-color: #EEE8AA;
+    height: 438.09px;
+}
+
+.main-section-bottom-footer {
+    background-color: #9932CC;
+    height: 112px;
 }
