@@ -1,0 +1,316 @@
+/* Importando fonte padrão */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Definindo padrões de estilo gerais */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'inter', sans-serif;
+}
+
+/* Definindo cor para o cabeçalho (header) */
+header {
+    background-color: #ffffff;
+    box-shadow: 0px 3px 10px #464646;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Centralizando navegação (nav) */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 6rem;
+}
+
+.nav-itens {
+    display: flex;
+    align-items: center;
+}
+
+/* Centralizando logo e definindo cor*/
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+}
+
+.logo h1 {
+    color: rgb(0, 0, 0);
+}
+
+/* Estilizando lista de itens */
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 16px;
+
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+/* Mudando cor dos elementos quando hover */
+.nav-link:hover {
+    color: blue;
+}
+
+.nav-link:hover .icon-arraw{
+    border-top: 2px solid blue;
+    border-left: 2px solid blue;
+}
+
+/* Estilizando e alinhando arrow de soluções */
+.icon-arraw {
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    transform: rotate(223deg);
+}
+
+.solucoes-icon {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.solucoes-icon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Alinhando submenu e ajustando visibilidade */
+.menu {
+    position: absolute;
+    top: calc(30px + 30px);
+    right: 10;
+    width: 200px;
+    min-height: 100px;
+    background: #e8eaed;
+    box-shadow: 0px 3px 2px #464646;
+    border-radius: 3px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu  {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.link-menu {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li {
+    padding: 15px 20px;
+    transition: 0s;
+}
+
+.menu ul li:hover {
+    background-color: #e8dada;
+}
+
+
+/* Estilizando botão de entrar do login */
+.login-button button {
+    border: none;
+    background-color: #000000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.login-button button a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+}
+
+.cadastre {
+    margin-right: 16px;
+}
+
+.cadastre:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+/* Defindo tamanho e posicionamento do icon*/ 
+.mobile-menu-icon .icon {
+    width: 24px;
+    transform: rotate(90deg);
+}
+
+/* Ocutando estilizações mobile */
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* Definindo quando as estilizações mobile devem aparecer */
+@media screen and (max-width: 1140px) {
+    /* Redefinindo espaçamento da nav */
+    .nav-bar {
+
+        padding: 1.5rem 4rem;
+    }
+
+    /* Ocutando nav-item e login-button*/
+    .nav-item {
+        display: none;
+    }
+
+    .login-button {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    /* Tirando estilizações pre definidas do button da class mobile-menu-icon */
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Definindo posicionamto da ul */
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1rem;
+        list-style: none;
+    }
+
+    
+
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1rem 2rem;
+    }
+
+    .mobile-menu .login-button {
+        display: block;
+        padding: 1rem 2rem;
+    }
+
+    .mobile-menu .login-button button {
+        width: 100%;
+    }
+
+    .open {
+        display: block;
+    }
+}
+
+/*Main*/
+.main-section {
+    background-color: #1c3326;
+    height: 657.200px;
+}
+
+.main-section-secundary {
+    background-color: aqua;
+    height: 616px;
+}
+
+.main-section-third {
+    background-color: blueviolet;
+    height: 1023.2px;
+}
+
+.main-section-sucess {
+    background-color: #DC143C;
+    height: 507.2px;
+}
+
+.main-section-using {
+    background-color: coral;
+    height: 1687.2px;
+}
+
+.main-section-honor {
+    background-color: rgb(80, 255, 100);
+    height: 600.8px;
+}
+
+.main-section-maximize {
+    background-color: rgb(255, 80, 208);
+    height: 636.8px;
+}
+
+.main-section-movement {
+    background-color: rgb(80, 255, 197);
+    height: 488.450px;
+}
+
+.main-section-salesblazers {
+    background-color: #FFFF00;
+    height: 931.6px;
+}
+
+.main-section-keep {
+    background-color: #B0E0E6;
+    height: 859.13px;
+}
+
+.main-section-ready {
+    background-color: #E6E6FA;
+    height: 771.6px;
+}
+
+.main-section-top-footer {
+    background-color: #EEE8AA;
+    height: 438.09px;
+}
+
+.main-section-bottom-footer {
+    background-color: #9932CC;
+    height: 112px;
+}
