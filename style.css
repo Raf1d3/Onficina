@@ -41,6 +41,9 @@ header {
 .logo h1 {
     color: rgb(0, 0, 0);
 }
+.logo img {
+    width: 250px;
+}
 
 /* Estilizando lista de itens */
 .nav-list {
@@ -117,8 +120,10 @@ header {
 }
 
 .menu.ativo {
+    margin-top:5px;
     opacity: 1;
     visibility: visible;
+    transition:0.2s
 }
 
 .submenu  {
@@ -142,17 +147,19 @@ header {
 }
 
 .menu ul li:hover {
-    background-color: #e8dada;
+    background-color: #8ab8fc;
 }
 
 
 /* Estilizando botão de entrar do login */
 .login-button button {
     border: none;
-    background-color: #000000;
-    padding: 10px 15px;
-    border-radius: 5px;
+    background-color: #4157FF;
+    padding: 12px 15px;
+    border-radius: 30px;
     margin-left: 10px;
+    width: 130px;
+
 }
 
 .login-button button a {
@@ -167,7 +174,14 @@ header {
     align-items: center;
 }
 
+.login-button a{
+    text-decoration: none;
+    color: black;
+}
+
+
 .cadastre {
+    text-decoration: none;
     margin-right: 16px;
 }
 
@@ -253,6 +267,9 @@ header {
 .main-section {
     background-color: #1c3326;
     height: 657.200px;
+    display: flex;
+    align-items: center;
+    
 }
 
 .main-section-secundary {
