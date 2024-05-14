@@ -113,14 +113,14 @@ header {
     width: 200px;
     min-height: 100px;
     background: #e8eaed;
-    box-shadow: 0px 3px 2px #464646;
+    box-shadow: 0 8px 16px 0 #00000033;
     border-radius: 3px;
     opacity: 0;
     visibility: hidden;
 }
 
 .menu.ativo {
-    margin-top: 5px;
+    padding-top: 5px;
     opacity: 1;
     visibility: visible;
     transition: 0.2s
@@ -152,48 +152,23 @@ header {
 
 
 /* Estilizando botão de entrar do login */
-.login-button button {
+.login-button a {
     border: none;
     background-color: #4157FF;
-    padding: 12px 15px;
+    padding: 12px 35px;
     border-radius: 30px;
     margin-left: 10px;
-    width: 130px;
     cursor: pointer;
-
-}
-.login-button button:hover {
-    background-color: #4167ff;
-    transition: 0.3s;
-
-}
-
-.login-button button a {
     text-decoration: none;
     color: white;
     font-weight: 500;
     font-size: 1.1rem;
 }
 
-.login-button {
-    display: flex;
-    align-items: center;
-}
+.login-button a:hover {
+    background-color: #4167ff;
+    transition: 0.3s;
 
-.login-button a {
-    text-decoration: none;
-    color: black;
-}
-
-
-.cadastre {
-    text-decoration: none;
-    margin-right: 16px;
-}
-
-.cadastre:hover {
-    color: blue;
-    cursor: pointer;
 }
 
 /* Defindo tamanho e posicionamento do icon*/
@@ -259,10 +234,7 @@ header {
     .mobile-menu .login-button {
         display: block;
         padding: 1rem 2rem;
-    }
-
-    .mobile-menu .login-button button {
-        width: 100%;
+        text-align: center;
     }
 
     .open {
@@ -278,15 +250,16 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 100px;
 }
 
 .main-section img {
     max-width: 350px;
+    width:60%;
 }
 
 #text-main {
-    max-width: 500px;
+    max-width: 380px;
 }
 
 #text-main h1 {
@@ -316,6 +289,7 @@ header {
     margin-top: 15px;
     cursor: pointer;
 }
+
 #text-main button:last-child {
     margin-left: 25px;
     background-color: #4157FF;
@@ -391,14 +365,7 @@ header {
     height: 438.09px;
 }
 
-#infos{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 20px;
-}
-
-footer{
+footer {
     display: flex;
     height: 224px;
     background-color: #1B1F27;
@@ -407,53 +374,40 @@ footer{
     color: white;
     flex-direction: column;
 }
-footer h4{
-    font-weight: 500;
-}
-footer hr{
-    width:98%
+
+@media screen and (max-width: 1140px) {
+    .main-section{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #text-main{
+        text-align: center;
+    }
+
+    #text-main h1{
+        font-size: 35px;
+    }
+
+    #text-main p{
+        font-size: 25px;
+    }
 }
 
-footer img{
-    max-width: 250px;
+@media screen and (max-width: 363px) {
+    #text-main button:last-child{
+        margin-left: 0;
+    }
 }
 
-.btn_social { 
-    width:100%; 
-    float:left; 
-    display:flex; 
-    margin:auto; 
-   }
-   .btn_social ul  { 
-    width:auto; 
-    margin:auto; 
-    float:left; 
-    display:block; 
-   }
-   .btn_social ul li  { 
-    position:relative; 
-    background:#555555; 
-    list-style:none; 
-    float:left; 
-    margin:5px; 
-    z-index:1; 
-    overflow:hidden; 
-    border-radius:50%; 
-    font-size:1.5em; 
-    text-align:center; 
-   }
-   .btn_social ul li a  { 
-    width:50px; 
-    height:50px; 
-    line-height:53px; 
-    display:block; 
-    text-decoration:none; 
-    color:#fff; 
-    transition:.4s;
-   }
-
-   .btn_social ul img{ 
-width: 50px;
-height: 50px;
-    
-   }
+@media screen and (max-width: 420px) {
+    .logo img{
+        width: 150px;
+    }
+    .nav-bar{
+        padding: 10px 10px;
+    }
+    .logo{
+        width:fit-content;
+    }
+}
