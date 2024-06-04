@@ -1,82 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>OnFicina</title>
-</head>
-
-<body>
-    <header>
-
-        <nav class="nav-bar">
-            <div class="nav-itens">
-                <div class="logo">
-                    <a href="index.html"><img src="assets/img/Logo horizontal.svg"></button></a>
-                </div>
-                <div class="nav-list">
-                    <ul>
-                        <li class="nav-item" id="solucoes">
-                            <a href="#" class="nav-link">Soluções
-                                <div class="solucoes-icon">
-                                    <button onclick="menuShow()"><span class="icon-arraw"></span></button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description"content="Orçamento para manutenções e compras de peças para veículos de forma rápida e segura!">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>OnFicina</title>
+    </head>
+    <body>
+        <header class="header-container">
+            <nav class="nav-bar">
+                <div class="nav-itens">
+                    <div class="nav-logo">
+                        <div class="img-desktop">
+                            <img class="property-logo"
+                                src="assets/img/icon_Onficina.png" lang="en" alt="Salesforce Logo">
+                        </div>
+                        <span class="title-logo">ONFICINA</span>
+                    </div>
+                    
+    
+                    <ul class="nav-links"  role="menubar">
+                        <li class="dropdown" role="menu">
+                            <a class="nav-links-title" href="#" onclick="menuShow()"> Produtos 
+                                <div class="icon">
+                                    <span class="icon-arrow"></span>
                                 </div>
-
-                                <div class="menu">
-                                    <ul class="submenu">
-                                        <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
-                                        <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
-                                        <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
-                                        <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
-                                    </ul>
-                                </div>
-
                             </a>
+                            
+                            
+                            <div class="box-arrow-space"></div>
+                            <div class="dropdown-menu">
+                                <ul class="dropdown-left">
+                                    <li><a class="nav-item-first" role="menuitem" href="#">teste</a></li>
+    
+                                </ul>
+                                <ul class="dropdown-right">
+                                    <li><a class="nav-item-first"role="menuitem"  href="#">teste</a></li>
+                                </ul>
+                            </div>
+    
                         </li>
-
-                        <li class="nav-item"><a href="#" class="nav-link">Cases</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Planos</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Recursos</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                        <li><a class="nav-links-title" href="#">Planos</a></li>
+                        <li><a class="nav-links-title" href="#">Contato</a></li>
+                    </ul>
+    
+                </div>
+    
+                <div class="div-button-desktop">
+                    <a class="link-button-watch" href="cadastro.html" aria-label="Faça login " role="button">
+                        <button class="login-button" type="button">Entrar</button>
+                    </a>
+                </div>
+                
+                <div class="arrow-mobile">
+                    <button onclick="menuShow()" type="button">
+                        <div class="logo">
+                            <div class="img-mobile">
+                                <img class="property-logo-mobile"
+                                    src="assets/img/icon_Onficina.png" lang="en" alt="Salesforce Logo">
+                            </div>
+                            <span class="title-logo-mobile">ONFICINA</span>
+                        </div>
+                        <span class="icon-arrow-mobile"></span>
+                    </button>
+                </div>
+            </nav>
+    
+    
+            <div class="mobile-menu">
+                <div class="nav-mobile">
+                    <ul class="nav-links" role="menubar" aria-haspopup="true">
+                        <li class="dropdown">
+                            <div class="icon">
+                                <button onclick="toggleMobileDropdown()" type="button">
+                                    <a class="nav-links-title" href="#">Produtos</a>
+                                    <div class="div-icon-arrow"><span class="icon-arrow"></span></div>
+                                </button>
+                            </div>
+                            <div class="popup">
+                                <span class="icon-arrow-popup"></span>
+                            </div>
+                            <div class="dropdown-menu-mobile" role="menu">
+                                <ul class="dropdown-left-right">
+                                    <li><a class="nav-item" role="menuitem" href="#">teste</a></li>
+                                    <li><a class="nav-item" role="menuitem" href="#">teste</a></li>
+                                    <li><a class="nav-item" role="menuitem" href="#">teste</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="nav-links-title" href="#">Planos</a></li>
+                        <li><a class="nav-links-title" href="#">Contato</a></li>
                     </ul>
                 </div>
-            </div>
-
-
-
-            <div class="login-button">
-                <a href="cadastro.html">Entrar</a>
-            </div>
-
-
-            <div class="mobile-menu-icon">
-                <button onclick="menuShow()"><img class="icon" src="assets/img/arraw-menu.png"></button>
-            </div>
-
-        </nav>
-        <div class="mobile-menu">
-            <ul>
-                <li class="nav-item" id="solucoes">
-                    <a href="#" class="nav-link">Soluções
-                        <div class="solucoes-icon">
-                            <button onclick="menuShow()"><span class="icon-arraw"></span></button>
-                        </div>
-
+    
+                <div class="div-button">
+                    <a class="link-button-watch" href="cadastro.html" aria-label="Faça login ">
+                        <button class="login-button" type="button">Entrar</button>
                     </a>
-                </li>
-                <li class="nav-item"><a href="#" class="nav-link">Cases</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Planos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Recursos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
-            </ul>
-
-            <div class="login-button">
-                <a href="#">Entrar</a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
     <main>
         <section class="main-section">
