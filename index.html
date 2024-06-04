@@ -1,107 +1,236 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>OnFicina</title>
-    </head>
-    <body>
-        <header>
 
-            <nav class="nav-bar">
-                <div class="nav-itens">
-                    <div class="logo">
-                        <a href="index.html"><img src="assets/img/Logo horizontal.svg"></button></a>
-                    </div>
-                    <div class="nav-list">
-                        <ul>
-                            <li class="nav-item" id="solucoes">
-                                <a href="#" class="nav-link">Soluções
-                                    <div class="solucoes-icon">
-                                        <button onclick="menuShow()"><span class="icon-arraw"></span></button>
-                                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>OnFicina</title>
+</head>
 
-                                    <div class="menu">
-                                        <ul class="submenu">
-                                            <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
-                                            <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
-                                            <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
-                                            <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
-                                        </ul>
-                                    </div>
+<body>
+    <header>
 
-                                </a>
-                            </li>
-
-                            <li class="nav-item"><a href="#" class="nav-link">Cases</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Planos</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Recursos</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
-                        </ul>
-                    </div>
+        <nav class="nav-bar">
+            <div class="nav-itens">
+                <div class="logo">
+                    <a href="index.html"><img src="assets/img/Logo horizontal.svg"></button></a>
                 </div>
+                <div class="nav-list">
+                    <ul>
+                        <li class="nav-item" id="solucoes">
+                            <a href="#" class="nav-link">Soluções
+                                <div class="solucoes-icon">
+                                    <button onclick="menuShow()"><span class="icon-arraw"></span></button>
+                                </div>
 
-        
+                                <div class="menu">
+                                    <ul class="submenu">
+                                        <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
+                                        <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
+                                        <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
+                                        <li class="item-menu"><a href="#" class="link-menu">teste</a></li>
+                                    </ul>
+                                </div>
 
-                    <div class="login-button">
-                        <a href="cadastro.html">Entrar</a>
-                    </div>
+                            </a>
+                        </li>
 
-
-                <div class="mobile-menu-icon">
-                    <button onclick="menuShow()"><img class="icon" src="assets/img/arraw-menu.png"></button>
-                </div>
-                
-            </nav>
-            <div class="mobile-menu">
-                <ul>
-                    <li class="nav-item" id="solucoes">
-                        <a href="#" class="nav-link">Soluções
-                            <div class="solucoes-icon">
-                                <button onclick="menuShow()"><span class="icon-arraw"></span></button>
-                            </div>
-
-                        </a>
-                    </li>    
-                    <li class="nav-item"><a href="#" class="nav-link">Cases</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Planos</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Recursos</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
-                </ul>
-
-                <div class="login-button">
-                    <a href="#">Entrar</a>
+                        <li class="nav-item"><a href="#" class="nav-link">Cases</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Planos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Recursos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                    </ul>
                 </div>
             </div>
-        </header>
 
-        <main>
-            <section class="main-section">
-                <div id="text-main">
-                    <h1>Sua oficina mais perto de você!</h1>
-                    <p>Orçamento para manutenções e compras de peças para veículos de forma rápida e segura!</p>
-                    <button>Experimente!</button>
-                    <button>Seja um profissional</button>
+
+
+            <div class="login-button">
+                <a href="cadastro.html">Entrar</a>
+            </div>
+
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="assets/img/arraw-menu.png"></button>
+            </div>
+
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item" id="solucoes">
+                    <a href="#" class="nav-link">Soluções
+                        <div class="solucoes-icon">
+                            <button onclick="menuShow()"><span class="icon-arraw"></span></button>
+                        </div>
+
+                    </a>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">Cases</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Planos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Recursos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+            </ul>
+
+            <div class="login-button">
+                <a href="#">Entrar</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="main-section">
+            <div id="text-main">
+                <h1>Sua oficina mais perto de você!</h1>
+                <p>Orçamento para manutenções e compras de peças para veículos de forma rápida e segura!</p>
+                <button>Experimente!</button>
+                <button>Seja um profissional</button>
+            </div>
+            <img src="/Onficina/assets/img/Bloco 1/tl.webp" alt="">
+        </section>
+        <div class="main-section-secundary">
+            <div id="text-secundary">
+                <h1>CONHEÇA NOSSOS SERVIÇOS</h1>
+                <p>Com a Onficina, você tem acesso a uma vasta gama de produtos, peças e serviços veiculares de forma
+                    prática e segura. Nossa plataforma online permite que você obtenha orçamentos detalhados para
+                    diversos serviços, desde manutenções rotineiras até reparos mais complexos.</p>
+            </div>
+            <div class="carousel">
+                <i id="left"> <img src="/Onficina/assets/img/Carousel/arrow-left.svg" alt=""></i>
+                <ul class="cards">
+                    <li class="card">
+                        <div class="img"><img src="assets/img/Bloco 2/img-Peças.png" alt="img" draggable="false"></div>
+                        <p>Faça compra de produtos e peças para veículos de forma rápida e segura!</p>
+                    </li>
+                    <li class="card">
+                        <div class="img" id="notification"><img src="assets/img/Bloco 2/img-notificacoes.png" alt="img"
+                                draggable="false"></div>
+                        <p>Receba notificações e saiba quando realizar manutenções peventivas.</p>
+                    </li>
+                    <li class="card">
+                        <div class="img"><img src="assets/img/Bloco 2/img-profissional.png" alt="img" draggable="false">
+                        </div>
+                        <p>Faça seu orçamento com nossos profissionais e agende sua manutenção online.</p>
+                    </li>
+                </ul>
+                <i id="right"><img src="/Onficina/assets/img/Carousel/arrow-right.svg" alt=""></i>
+            </div>
+        </div>
+        <div class="main-section-third">
+            <img src="/Onficina/assets/img/Bloco 3/img-brasil.png" alt="">
+            <div>
+                <h1>TENHA ACESSO AS MELHORES PRESTADORAS DE SERVIÇO VEICULAR DA SUA REGIÃO</h1>
+                <p>Na Onficina, você encontra as melhores prestadoras de serviço veicular da sua região com facilidade.
+                    Nossa plataforma permite que você visualize a reputação de cada prestadora, classificando as mais
+                    bem
+                    avaliadas para facilitar sua escolha. Além disso, você pode filtrar as opções por preço de
+                    peças/serviços, localização e reputação, garantindo uma decisão informada e confiável. Encontre
+                    rapidamente a prestadora ideal para suas necessidades e tenha a certeza de um serviço de qualidade.
+                </p>
+            </div>
+        </div>
+        <div class="main-section-fourth">
+            <div>
+                <h1>COMUNICAÇÃO FACILITADA COM PROFISSIONAIS QUALIFICADOS</h1>
+                <p>Na Onficina, garantimos uma comunicação ágil e eficiente com profissionais qualificados através de um
+                    chat integrado. Com essa ferramenta, você pode trocar mensagens e fazer ligações diretamente com os
+                    prestadores de serviço, garantindo um atendimento personalizado e imediato.</p>
+            </div>
+            <img src="/Onficina/assets/img/Bloco 4/img-chat.png" alt="">
+        </div>
+        <div class="main-section-fifth">
+            <img src="/Onficina/assets/img/Bloco 5/img-connections.png" alt="">
+            <div>
+                <h1>TENHA ACESSO AOS MELHORES PREÇOS DE FORMA FACIL E RAPIDA</h1>
+                <p>Encontrar os melhores preços para produtos e serviços veiculares é simples e rápido. Nossa plataforma
+                    conta com uma seção dedicada onde prestadores de serviço podem anunciar seus produtos de maneira
+                    fácil e
+                    segura, garantindo transparência e segurança tanto para os prestadores quanto para os clientes.
+                    Compare
+                    ofertas, escolha a melhor opção e economize tempo e dinheiro com a praticidade que só a Onficina
+                    oferece.</p>
+            </div>
+        </div>
+        <div class="main-section-sixth">
+            <div id="text-sixth">
+                <h1>SEJA UM PROFISSIONAL</h1>
+                <p>Cadastre sua empresa para impulsionar seu negocio</p>
+            </div>
+            <section class="main-sixth">
+                <div class="carousel-2">
+                    <i id="left"> <img src="/Onficina/assets/img/Carousel/arrow-left.svg" alt=""></i>
+                    <ul class="cards">
+                        <li class="card">
+                            <div class="img"><img src="/Onficina/assets/img/Bloco 6/img-oficinas.png" alt="img"
+                                    draggable="false"></div>
+                            <p>Oficinas</p>
+                        </li>
+                        <li class="card">
+                            <div class="img"><img src="/Onficina/assets/img/Bloco 6/img-revendedora-pecas.png" alt="img"
+                                    draggable="false"></div>
+                            <p>Revendedora de peças</p>
+                        </li>
+                        <li class="card">
+                            <div class="img"><img src="/Onficina/assets/img/Bloco 6/img-centro-automotivo.png" alt="img"
+                                    draggable="false">
+                            </div>
+                            <p>Centros Automotivos</p>
+                        </li>
+                        <li class="card">
+                            <div class="img"><img src="/Onficina/assets/img/Bloco 6/img-desmanche.png" alt="img"
+                                    draggable="false">
+                            </div>
+                            <p>Desmanches</p>
+                        </li>
+                        <li class="card">
+                            <div class="img"><img src="/Onficina/assets/img/Bloco 6/img-estetica-automotiva.png"
+                                    alt="img" draggable="false">
+                            </div>
+                            <p>Estetica automotiva</p>
+                        </li>
+                        <li class="card">
+                            <div class="img"><img src="/Onficina/assets/img/Bloco 6/img-funilaria-pintura.png" alt="img"
+                                    draggable="false">
+                            </div>
+                            <p>Funilaria e Pintura</p>
+                        </li>
+                        <li class="card">
+                            <div class="img"><img src="/Onficina/assets/img/Bloco 6/img-reboque.png" alt="img"
+                                    draggable="false">
+                            </div>
+                            <p>Serviços de Reboque</p>
+                        </li>
+                    </ul>
+                    <i id="right"><img src="/Onficina/assets/img/Carousel/arrow-right.svg" alt=""></i>
                 </div>
-                    <img src="/Onficina/assets/img/tl.webp" alt="">
+                <img src="/Onficina/assets/img/Bloco 6/img-profissional-2.png" id="img-profissional-2" alt="">
             </section>
-            <div class="main-section-secundary"></div>
-            <div class="main-section-third"></div>
-            <div class="main-section-sucess"></div>
-            <div class="main-section-using"></div>
-            <div class="main-section-honor"></div>
-            <div class="main-section-maximize"></div>
-            <div class="main-section-movement"></div>
-            <div class="main-section-salesblazers"></div>
-            <div class="main-section-keep"></div>
-            <div class="main-section-ready"></div>
-            <div class="main-section-top-footer"></div>
+        </div>
+        <div class="main-section-seventh">
+            <h1>JUNTE-SE AOS NOSSOS CLIENTES</h1>
+            <img src="/Onficina/assets/img/Bloco 7/img-marcas.png" alt="">
+        </div>
+        <div class="main-section-eighth">
+            <div>
+                <h1>DISPONIVEL EM TODAS AS PLATAFORMAS</h1>
+                <p>Sua oficina na palma da sua mão</p>
+                <img src="/Onficina/assets/img/Bloco 8/img-googleplay.png" alt="">
+                <img src="/Onficina/assets/img/Bloco 8/img-appstore.png" alt="">
+            </div>
+            <img src="/Onficina/assets/img/Bloco 8/img-dispositivos.png" alt="">
+        </div>
+        <!--
+        <div class="main-section-salesblazers"></div>
+        <div class="main-section-keep"></div>
+        <div class="main-section-ready"></div>
+        <div class="main-section-top-footer"></div>
+        -->
 
-        </main>
-        <footer>
-        </footer>
+    </main>
+    <footer>
+    </footer>
 
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+</body>
+
 </html>

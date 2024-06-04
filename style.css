@@ -255,7 +255,7 @@ header {
 
 .main-section img {
     max-width: 350px;
-    width:60%;
+    width: 60%;
 }
 
 #text-main {
@@ -309,42 +309,44 @@ header {
     transition: 0.3s;
 }
 
+/* config pages*/
 
 .main-section-secundary {
-    background-color: aqua;
+    background-color: #ffffff;
     height: 616px;
 }
 
 .main-section-third {
-    background-color: blueviolet;
-    height: 1023.2px;
+    background-color: #ffffff;
+    height: 616px;
 }
 
-.main-section-sucess {
-    background-color: #DC143C;
+.main-section-fourth {
+    background-color: #4157FF;
     height: 507.2px;
 }
 
-.main-section-using {
-    background-color: coral;
-    height: 1687.2px;
+.main-section-fifth {
+    background-color: #ffffff;
+    height: 800.2px;
 }
 
-.main-section-honor {
-    background-color: rgb(80, 255, 100);
+.main-section-sixth {
+    background-color: #4157FF;
     height: 600.8px;
 }
 
-.main-section-maximize {
-    background-color: rgb(255, 80, 208);
+.main-section-seventh {
+    background-color: #ffffff;
     height: 636.8px;
 }
 
-.main-section-movement {
-    background-color: rgb(80, 255, 197);
+.main-section-eighth {
+    background-color: #4157FF;
     height: 488.450px;
 }
 
+/*
 .main-section-salesblazers {
     background-color: #FFFF00;
     height: 931.6px;
@@ -364,6 +366,7 @@ header {
     background-color: #EEE8AA;
     height: 438.09px;
 }
+*/
 
 footer {
     display: flex;
@@ -376,38 +379,429 @@ footer {
 }
 
 @media screen and (max-width: 1140px) {
-    .main-section{
+    .main-section {
         flex-direction: column;
         gap: 10px;
     }
 
-    #text-main{
+    #text-main {
         text-align: center;
     }
 
-    #text-main h1{
+    #text-main h1 {
         font-size: 35px;
     }
 
-    #text-main p{
+    #text-main p {
         font-size: 25px;
     }
 }
 
 @media screen and (max-width: 363px) {
-    #text-main button:last-child{
+    #text-main button:last-child {
         margin-left: 0;
     }
 }
 
 @media screen and (max-width: 420px) {
-    .logo img{
+    .logo img {
         width: 150px;
     }
-    .nav-bar{
+
+    .nav-bar {
         padding: 10px 10px;
     }
-    .logo{
-        width:fit-content;
+
+    .logo {
+        width: fit-content;
+    }
+}
+
+
+
+/*Bloco 2*/
+
+
+.main-section-secundary{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#text-secundary{
+    margin: 20px 450px 20px 124px;
+}
+
+#text-secundary h1{
+    font-weight: 800;
+}
+
+
+/*Carrossel 1 - Bloco 2*/
+
+.carousel {
+    max-width: 85%;
+    position: relative;
+}
+
+.carousel i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+}
+.carousel i img {
+    margin: 12px 17px 12px;
+}
+
+.carousel i:active {
+    transform: translateY(-50%) scale(0.85);
+}
+
+.carousel i:first-child {
+    left: -80px;
+}
+
+.carousel i:last-child {
+    right: -80px;
+}
+
+.carousel .cards {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 40px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 50px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
+.cards.no-transition {
+    scroll-behavior: auto;
+}
+
+.cards.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.cards.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.cards :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .card {
+    scroll-snap-align: start;
+    height: 320px;
+    max-width: 400px;
+    list-style: none;
+    background: #F3F5F8;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#notification{
+    margin-bottom: 75px
+}
+
+.cards .card p{
+width: 360px;
+}
+
+
+/*Bloco 3*/
+
+.main-section-third{
+display: flex;
+align-items: center;
+}
+
+
+.main-section-third img{
+    width: 200px;
+    }
+
+/*Bloco 4*/
+
+.main-section-fourth{
+    display: flex;
+    align-items: center;
+    }
+    
+    
+.main-section-fourth img{
+        width: 200px;
+}
+
+/*Bloco 5*/
+
+.main-section-fifth{
+    display: flex;
+    align-items: center;
+    }
+    
+    
+.main-section-fifth img{
+        width: 200px;
+}
+
+/*Bloco 6*/
+
+.main-section-sixth{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-sixth{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+gap: 120px;
+height: 100%;
+}
+
+#img-profissional-2{
+    max-width: 368px;
+}
+
+#text-sixth{
+color: #ffffff;
+margin: 1.5% 0% 0% 15.5%;
+width: 500px;
+text-align: center;
+}
+
+/*Carrossel 2 - Bloco 6*/
+
+
+.carousel-2 {
+    max-width: 40%;
+    position: relative;
+}
+
+.carousel-2 i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+}
+.carousel-2 i img {
+    margin: 12px 17px 12px;
+}
+
+.carousel-2 i:active {
+    transform: translateY(-50%) scale(0.85);
+}
+
+.carousel-2 i:first-child {
+    left: -80px;
+}
+
+.carousel-2 i:last-child {
+    right: -80px;
+}
+
+.carousel-2 .cards {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 2) - 20px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 40px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+
+.carousel-2 .cards .card {
+    scroll-snap-align: start;
+    height: 345px;
+    max-width: 400px;
+    list-style: none;
+    background: #ffffff00;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.carousel-2 .cards .card img{
+    max-width: 320px;
+}
+
+
+.carousel-2 .cards .card p{
+    width: 360px;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+
+
+
+
+/*Bloco 7*/
+
+
+.main-section-seventh{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    }
+    
+    
+.main-section-seventh img{
+        width: 100%;
+}
+
+
+
+/*Bloco 8*/
+
+.main-section-eighth{
+    display: flex;
+    align-items: center;
+    }
+    
+    
+.main-section-eighth img{
+        width: 20%;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .carousel .cards {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+
+    .carousel-2 .cards {
+        grid-auto-columns: calc((100% / 1) - 9px);
+    }
+
+    .main-section-sixth{
+        align-items: center;
+        height: 600px;
+    }
+    #text-sixth{
+        margin: 1.5% 0% 0% 0%;
+        width: auto;
+    }
+
+    #img-profissional-2{
+       display: none;
+    }
+
+
+}
+
+@media screen and (max-width: 1500px) {
+    #text-secundary{
+        margin: 0px 50px 20px;
+    }
+
+    .cards .card p{
+        width: 200px;
+    }
+
+    .carousel i:first-child {
+        left: -0px;
+    }
+    
+    .carousel i:last-child {
+        right: -0px;
+    }
+
+    .carousel-2 i:first-child {
+        left: -0px;
+    }
+    
+    .carousel-2 i:last-child {
+        right: -0px;
+    }
+
+
+    .carousel .card img{
+        width: 80%;
+    }
+
+    .carousel-2 .card img{
+        width: 90%;
+    }
+
+    .carousel-2{
+        max-width: 60%;
+    }
+    
+    .carousel-2 .cards .card {
+    height: 285px;
+    }
+
+    .main-sixth{
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    #img-profissional-2{
+        width: 10%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .carousel .cards {
+        grid-auto-columns: 100%;
+    }
+
+    .carousel-2 .cards {
+        grid-auto-columns: 100%;
+    }
+    .main-section-secundary{
+        min-height: 800px;
+    }
+    .carousel-2{
+        max-width: 80%;
     }
 }
