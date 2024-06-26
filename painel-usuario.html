@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel do Usuário - Onficina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .container {
+            margin: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .logout {
+            color: white;
+            background-color: #dc3545;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .logout:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <img src="/assets/img/img-user.png" alt="Foto do Perfil">
+            <span>Admin</span>
+        </div>
+        <button class="logout">Sair</button>
+    </header>
+    <div class="container">
+        <div class="card">
+            <h2>Informações do Veículo</h2>
+            <ul>
+                <li>Marca: Toyota</li>
+                <li>Modelo: Corolla</li>
+                <li>Ano: 2020</li>
+                <li>Placa: ABC-1234</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Compras pelo Aplicativo</h2>
+            <ul>
+                <li>Filtro de óleo - Comprado em 12/05/2024</li>
+                <li>Pneus - Comprado em 10/03/2024</li>
+                <li>Bateria - Comprado em 20/01/2024</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Oficinas Contratadas</h2>
+            <ul>
+                <li>Oficina ABC - Serviço de troca de óleo em 12/05/2024</li>
+                <li>Oficina XYZ - Alinhamento e balanceamento em 10/03/2024</li>
+                <li>Oficina 123 - Revisão completa em 20/01/2024</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let logout = document.getElementsByClassName("logout")[0];
+        logout.addEventListener("click", () => {
+            window.location.href = "login.html"; 
+        })
+    </script>
+</body>
+</html>
