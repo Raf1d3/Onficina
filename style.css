@@ -3,7 +3,13 @@
     padding: 0;
     color: #080707;
     line-height: 1.5;
-    font-family: 'Salesforce Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+    --color-blue-background: #4157FF;
+    --color-white-background:#ffffff;
+    --color-black-background: #000000;
 }
 
 a {
@@ -12,8 +18,12 @@ a {
 }
 
 a:hover, .dropdown-menu a:hover {
-    color: #4157FF;
+    color:  var(--color-blue-background);
 }
+
+/*========================================================================================================================
+                                                            MENU
+==========================================================================================================================*/
 
 .header-container {
     top: 0;
@@ -26,7 +36,7 @@ a:hover, .dropdown-menu a:hover {
     min-width: 60px;
     min-height: 51px;
     align-items: center;
-    background-color: white;
+    background-color: var(--color-white-background);
     border-top: 1px solid rgd(229, 229, 299);
     box-shadow: rgba(24, 24, 24, 0.08) 0px 0px 2px, rgba(24, 24, 24, 0.16) 0px 2px 4px 1px;
 }
@@ -39,8 +49,8 @@ a:hover, .dropdown-menu a:hover {
     padding: 8px 24px;
     border-radius: 4px;
     white-space: nowrap;
-    border: solid #4157FF;
-    background-color: #4157FF;
+    border: solid  var(--color-blue-background);
+    background-color:  var(--color-blue-background);
 }
 
 .login-button:hover {
@@ -87,7 +97,7 @@ a:hover, .dropdown-menu a:hover {
     z-index: 999;
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: var(--color-white-background);
 }
 
 .nav-logo {
@@ -105,10 +115,10 @@ a:hover, .dropdown-menu a:hover {
     margin-right: 40px;
     align-items: center;
     justify-content: center;
-    justify-content: space-between;
 }
 
 .nav-itens {
+    width: 1400px;
     display: flex;
     align-items: center;
 }
@@ -134,10 +144,8 @@ a:hover, .dropdown-menu a:hover {
 
 
 .img-desktop {
-
     transition: max-width 0.25s ease-in-out 0s, padding-right 0.25s ease-in-out 0s;
 }
-
 
 .title-logo, .title-logo-mobile {
     font-size: 24px;
@@ -154,11 +162,11 @@ a:hover, .dropdown-menu a:hover {
 .dropdown-menu {
     top: 60px;
     opacity: 0;
-    left: 230px;
-    width: 640px;
+    /*left: 230px;*/
+    /* width: 100%; */
     display: flex;
     margin-top: 12px;
-    height: 295.200px;
+    /* height: 295.200px; */
     position: absolute;
     visibility: hidden;
     border-radius: 16px;
@@ -184,12 +192,10 @@ a:hover, .dropdown-menu a:hover {
 }
 
 .dropdown-left, .dropdown-right {
-    display: flex;
-    width: 240px;
-    list-style: none;
-    margin-right: 20px;
-    flex-direction: column;
-    justify-content: center;
+    opacity: 1;
+    top: 3.4rem;
+    pointer-events: initial;
+    transition: top .3s;
 }
 
 .dropdown-right {
@@ -215,8 +221,8 @@ a:hover, .dropdown-menu a:hover {
 
 .nav-bar:hover .icon-arrow-mobile, .nav-bar:hover .title-logo-mobile,
 .dropdown:hover .icon-arrow, .dropdown:hover .nav-links-title {
-    color: #4157FF;
-    border-color: #4157FF;
+    color:  var(--color-blue-background);
+    border-color:  var(--color-blue-background);
 }
 
 .icon {
@@ -318,7 +324,7 @@ a:hover, .dropdown-menu a:hover {
     bottom: 0;
     z-index: 1000;
     position: sticky;
-    background-color: white;
+    background-color: var(--color-white-background);
     padding: 24px 24px 32px 24px;
 }
 
@@ -327,7 +333,7 @@ a:hover, .dropdown-menu a:hover {
 }
 
 main {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--color-white-background);;
 }
 
 .teste {
@@ -348,7 +354,7 @@ main {
     position: absolute;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1500px) {
     .nav-links {
         display: none;
         overflow-y: auto;
@@ -453,36 +459,60 @@ main {
         max-width: 45px;
         padding-right: 16px;
     }
+
+    .nav-itens{
+        width: auto;
+    }
+
+    .nav-bar {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
 }
 
-/*Main*/
+/*wave*/
+#wave-transition {
+    margin-top: -1px;
+    margin-bottom: -100px;
+    height: 200px;
+    background: #F2F2F2;
+    clip-path: polygon(100% 0%, 0% 0% , 0.00% 54.63%, 2.00% 54.55%, 4.00% 54.32%, 6.00% 53.94%, 8.00% 53.41%, 10.00% 52.75%, 12.00% 51.96%, 14.00% 51.06%, 16.00% 50.05%, 18.00% 48.97%, 20.00% 47.82%, 22.00% 46.62%, 24.00% 45.39%, 26.00% 44.16%, 28.00% 42.93%, 30.00% 41.73%, 32.00% 40.58%, 34.00% 39.50%, 36.00% 38.50%, 38.00% 37.60%, 40.00% 36.81%, 42.00% 36.14%, 44.00% 35.62%, 46.00% 35.23%, 48.00% 35.00%, 50.00% 34.93%, 52.00% 35.00%, 54.00% 35.23%, 56.00% 35.62%, 58.00% 36.14%, 60.00% 36.81%, 62.00% 37.60%, 64.00% 38.50%, 66.00% 39.50%, 68.00% 40.58%, 70.00% 41.73%, 72.00% 42.93%, 74.00% 44.16%, 76.00% 45.39%, 78.00% 46.62%, 80.00% 47.82%, 82.00% 48.97%, 84.00% 50.05%, 86.00% 51.06%, 88.00% 51.96%, 90.00% 52.75%, 92.00% 53.41%, 94.00% 53.94%, 96.00% 54.32%, 98.00% 54.55%, 100.00% 54.63%);
+
+}
+
+/*========================================================================================================================
+                                                         MAIN
+==========================================================================================================================*/
 .main-section {
-    background-color: #4157FF;
+    background-color:#F2F2F2;
     color: white;
     height: 687.00px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 100px;
+    gap: 150px;
     width: 100%;
 }
 
 .main-section img {
-    max-width: 350px;
+    position: relative;
+  top:50px;
+    z-index: 1000;
+    max-width: 600px;
     width: 60%;
 }
 
 #text-main {
-    max-width: 380px;
+    max-width: 700px;
 }
 
 #text-main h1 {
     font-family: 'inter', sans-serif;
-    font-size: 43.5px;
+    font-size: 4.5rem;
     line-height: 60px;
     font-weight: 800;
     margin-bottom: 20px;
-    color: #ffffff;
+    color: var(--color-black-background);
 }
 
 #text-main p {
@@ -491,13 +521,13 @@ main {
     line-height: 30px;
     font-weight: 400;
     margin-bottom: 20px;
-    color: #ffffff;
+    color: var(--color-black-background);
 }
 
 #text-main button {
     font-family: 'DM Sans', sans-serif;
     border: none;
-    background-color: #ffffff;
+    background-color: var(--color-white-background);
     padding: 15px 18px;
     border-radius: 30px;
     font-size: 17px;
@@ -508,7 +538,7 @@ main {
 
 #text-main button:last-child {
     margin-left: 25px;
-    background-color: #4157FF;
+    background-color:  var(--color-blue-background);
     color: white;
     padding: 14px 8px;
     border: solid 3px white;
@@ -527,39 +557,44 @@ main {
 
 /* config pages*/
 
-.main-section-secundary {
-    background-color: #ffffff;
+/* .main-section-secundary {
+    background-color: var(--color-white-background);
     height: 616px;
 }
 
 .main-section-third {
-    background-color: #ffffff;
+    background-color: var(--color-white-background);
     height: 616px;
 }
 
 .main-section-fourth {
-    background-color: #4157FF;
+    background-color:  var(--color-white-background);
     height: 725.2px;
 }
 
 .main-section-fifth {
-    background-color: #ffffff;
+    background-color: var(--color-white-background);
     height: 800.2px;
 }
 
 .main-section-sixth {
-    background-color: #4157FF;
+    background-color:  var(--color-blue-background);
     height: 600.8px;
 }
 
 .main-section-seventh {
-    background-color: #ffffff;
+    background-color: var(--color-white-background);
     height: 636.8px;
 }
 
 .main-section-eighth {
-    background-color: #4157FF;
+    background-color:  var(--color-blue-background);
     height: 488.450px;
+} */
+
+
+main section {
+    padding: 100px;
 }
 
 /*
@@ -727,6 +762,8 @@ footer {
     scrollbar-width: none;
 }
 
+
+
 .cards::-webkit-scrollbar {
     display: none;
 }
@@ -804,7 +841,7 @@ footer {
     width: 650px;
     margin-top: 30px;
     font-size: 19px;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 .content-third img {
@@ -823,7 +860,7 @@ footer {
 }
 
 .main-section-fourth * {
-    color: #ffffff;
+    color: var(--color-black-background);
 }
 
 .content-fourth {
@@ -847,7 +884,7 @@ footer {
 #text-fourth p {
     margin-top: 30px;
     font-size: 20px;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 .content-fourth img {
@@ -890,7 +927,7 @@ footer {
 #text-fifth p {
     margin-top: 20px;
     font-size: 20px;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 .content-fifth img {
@@ -940,7 +977,7 @@ footer {
 }
 
 #text-sixth * {
-    color: #ffffff;
+    color: var(--color-black-background);;
 }
 
 /*Carrossel 2 - Bloco 6*/
@@ -1018,7 +1055,7 @@ footer {
 
 .carousel-2 .cards .card p {
     width: 360px;
-    color: #ffffff;
+    color: var(--color-black-background);;
     text-align: center;
 }
 
@@ -1066,7 +1103,7 @@ footer {
 }
 
 .main-section-eighth * {
-    color: #ffffff;
+    color: var(--color-black-background);;
 }
 
 
@@ -1096,7 +1133,7 @@ footer {
 #text-eighth p {
     margin-top: 10px;
     font-size: 20px;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 
@@ -1111,6 +1148,12 @@ footer {
 .content-eighth img {
     max-width: 580px;
     width: 50%;
+   
+}
+
+.content-eighth .dispositivo{
+
+    transform: scaleX(-1);
 }
 
 
@@ -1345,4 +1388,174 @@ footer {
     }
 
 
+}
+/*========================================================================================================================
+                                                    CADASTRO
+==========================================================================================================================*/
+
+/* Left side - Forms */
+.general-container {
+    position: relative;
+}
+
+.principal-container {
+    width: 100%;
+    height: 493.33px;
+    max-width: 750px;
+    background: #fbfdfe;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 1px rgba(113, 106, 202, 0.2);
+    overflow: hidden;
+    
+    display: grid;
+    z-index: 1000;
+}
+
+.form-container {
+    background: #fbfdfe;
+    max-width: 437.5px;
+    padding: 48px 40px 36px;
+}
+
+form {
+    height: 100%;
+    width: 100%;
+}
+
+.form-group {
+    width: 357.500px;
+    height: 62px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    border: 1px solid #e7f0f6;
+    padding: 0.375rem 0.75rem;
+    box-sizing: border-box;
+    border-radius: 0.25rem;
+    outline: none;
+    font-size: 1rem;  
+}
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.form-group input:focus {
+    box-shadow: 0px 0px 0px 3px #B6D6F2;
+    border: 1px solid #7EBCF2; 
+}
+
+.form-group input::placeholder {
+    color: #c3c8cb; 
+    font-size: 14px;
+}
+
+.class-label {
+    color: #41494f;
+}
+
+.title {
+    color: #202c3a; 
+    font-size: 22px;
+    height: 29.33px;
+    margin: 16px 0;
+    line-height: 1.3333;
+}
+.continue-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    position: relative;
+    background:  var(--color-blue-background);
+    padding: 0.5rem 1.25rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    color: white;
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 1.15px;
+}
+
+.continue-button button:focus {
+    box-shadow: 0px 0px 0px 3px #B6D6F2;
+}
+
+/* Right side - logos */
+.right-logo-div {
+    background: #202c3a;
+}
+
+.text-right {
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 10px;
+}
+
+.right-logo-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-logo {
+    width: 90px;
+    height: 93.59px;
+}
+
+.img-nome {
+    width:105px;
+    height: 27.64px;
+    margin-top: 25px;
+}
+
+.logos h1{
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+/* Bottom side - privacty and terms*/
+.politics-term-div {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-end
+}
+
+.politics-term-div a {
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+}
+
+.term-div {
+    margin-left: 20px;
+}
+
+.main-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-blue-background);
 }
