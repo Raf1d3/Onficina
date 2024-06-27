@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>OnFicina</title>
+</head>
+
+<body>
+
+    <!-- <header class="header-container">
+        <nav class="nav-bar container">
+            <div class="nav-itens">
+                <div class="nav-logo">
+                    <div class="img-desktop">
+                        <img class="property-logo" src="assets/img/icon_Onficina.png" lang="en" alt="Salesforce Logo">
+                    </div>
+                    <a href="/index.html">
+                        <span class="title-logo">ONFICINA</span>
+                    </a>
+                </div>
+
+
+                <ul class="nav-links" role="menubar">
+                    <li class="dropdown" role="menu">
+                        <a class="nav-links-title" href="#" onclick="menuShow()"> Produtos
+                            <div class="icon">
+                                <span class="icon-arrow"></span>
+                            </div>
+                        </a>
+
+
+                        <div class="box-arrow-space"></div>
+                        <div class="dropdown-menu">
+                            <ul class="dropdown-left">
+                                <li><a class="nav-item-first" role="menuitem" href="#">teste</a></li>
+
+                            </ul>
+                            <ul class="dropdown-right">
+                                <li><a class="nav-item-first" role="menuitem" href="#">teste</a></li>
+                            </ul>
+                        </div>
+
+                    </li>
+                    <li><a class="nav-links-title" href="#">Planos</a></li>
+                    <li><a class="nav-links-title" href="#">Contato</a></li>
+                </ul>
+
+            </div>
+
+            <div class="arrow-mobile">
+                <button onclick="menuShow()" type="button">
+                    <div class="logo">
+                        <div class="img-mobile">
+                            <img class="property-logo-mobile" src="assets/img/icon_Onficina.png" lang="en"
+                                alt="Salesforce Logo">
+                        </div>
+                        <span class="title-logo-mobile">ONFICINA</span>
+                    </div>
+                    <span class="icon-arrow-mobile"></span>
+                </button>
+            </div>
+        </nav>
+
+
+
+        <div class="mobile-menu">
+            <div class="nav-mobile">
+                <ul class="nav-links" role="menubar" aria-haspopup="true">
+                    <li class="dropdown">
+                        <div class="icon">
+                            <button onclick="toggleMobileDropdown()" type="button">
+                                <a class="nav-links-title" href="#">Produtos</a>
+                                <div class="div-icon-arrow"><span class="icon-arrow"></span></div>
+                            </button>
+                        </div>
+                        <div class="popup">
+                            <span class="icon-arrow-popup"></span>
+                        </div>
+                        <div class="dropdown-menu-mobile" role="menu">
+                            <ul class="dropdown-left-right">
+                                <li><a class="nav-item" role="menuitem" href="#">teste</a></li>
+                                <li><a class="nav-item" role="menuitem" href="#">teste</a></li>
+                                <li><a class="nav-item" role="menuitem" href="#">teste</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="nav-links-title" href="#">Planos</a></li>
+                    <li><a class="nav-links-title" href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </header> -->
+
+    <main>
+        <section id="main-login">
+            <div class="container-login" id="container-login">
+                <div class="form-container cadastro-container">
+                    <form action="">
+                        <h1>Crie sua conta</h1>
+                        <div class="social-container">
+                            <a href="#" class="social"><img class="fab fa-facebook-f"
+                                    src="/assets/img/icon-face-black.png"></a>
+                            <a href="#" class="social"><img class="fab fa-google-plus-g"
+                                    src="/assets/img/icon-google-black.png"></a>
+                            <a href="#" class="social"><img class="fab fa-linkedin-in"
+                                    src="/assets/img/icon-linkedin-black.png"></a>
+                        </div>
+                        <span>ou use seu email para se cadastrar</span>
+                        <input type="text" placeholder="Nome" />
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Senha" />
+                        <button>Cadastrar</button>
+                    </form>
+                </div>
+                <div class="form-container entrar-container">
+                    <form action="">
+                        <h1>Entrar</h1>
+                        <div class="social-container">
+                            <a href="#" class="social"><img class="fab fa-facebook-f"
+                                    src="/assets/img/icon-face-black.png"></a>
+                            <a href="#" class="social"><img class="fab fa-google-plus-g"
+                                    src="/assets/img/icon-google-black.png"></a>
+                            <a href="#" class="social"><img class="fab fa-linkedin-in"
+                                    src="/assets/img/icon-linkedin-black.png"></a>
+                        </div>
+                        <span>Ou use sua conta</span>
+                        <input type="email" placeholder="Email" id="input-email-login" />
+                        <input type="password" placeholder="Senha" id="input-senha-login" />
+                        <div class="error-message" id="error-message">Email ou senha inválidos</div>
+                        <a href="#">Esqueceu sua senha?</a>
+                        <button id="bot-entrar">Entrar</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Bem vindo de volta!</h1>
+                            <p>Faça o login, para se manter conectado</p>
+                            <button class="ghost" id="trocar-entrar">Entrar</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>Bem vindo!</h1>
+                            <p>Crie sua conta e comece sua jornada conosco</p>
+                            <button class="ghost" id="trocar-cadastrar">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+    <script>
+        // pagina login
+        const botTrocarCadastrar = document.getElementById('trocar-cadastrar');
+        const BotTrocarEntrar = document.getElementById('trocar-entrar');
+        const container = document.getElementById('container-login');
+        botTrocarCadastrar.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        BotTrocarEntrar.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+
+        // verificação basica login
+        const inputLoginEmail = document.getElementById("input-email-login");
+        const inputLoginSenha = document.getElementById("input-senha-login");
+        const botEntrar = document.getElementById("bot-entrar");
+        let errorMessage = document.getElementById('error-message');
+        errorMessage.style.display = 'none';
+
+        botEntrar.addEventListener("click", () => {
+            if (inputLoginEmail.value == "admin@gmail.com" && inputLoginSenha.value == "") {
+                event.preventDefault();
+
+                window.location.href = "painel-usuario.html";
+            }else{
+                event.preventDefault();
+                errorMessage.style.display = 'block';
+                inputLoginSenha.style.border = "red 1px solid";
+                inputLoginEmail.style.border = "red 1px solid";
+                inputLoginSenha.classList.add('error');
+                inputLoginEmail.classList.add('error');
+            }
+        });
+
+        inputLoginEmail.addEventListener("focus", () => {
+            inputLoginEmail.style.border = "none"
+            inputLoginSenha.style.border = "none"
+            errorMessage.style.display = 'none';
+        });
+        inputLoginSenha.addEventListener("focus", () => {
+            inputLoginEmail.style.border = "none"
+            inputLoginSenha.style.border = "none"
+            errorMessage.style.display = 'none';
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
