@@ -125,10 +125,9 @@ a {
 }
 
 @media screen and (max-width: 1164px) {
-  .carousel .cards {
+  .carousel .cards  {
     grid-auto-columns: calc((100% / 3) - 40px);
   }
-
   .container {
     flex-direction: column;
 
@@ -174,7 +173,6 @@ a {
     pointer-events: initial;
     opacity: 1;
   }
-
   .header {
     display: flex;
     align-items: center;
@@ -198,34 +196,33 @@ a {
     padding-top: 1rem;
   }
 
-  #img-profissional-2 {
+  #img-profissional-2{
+    display: none;
+   }
+  #text-main img{
     display: none;
   }
-
-  #text-main img {
+  
+  .dispositivo{
     display: none;
   }
-
-  .dispositivo {
-    display: none;
-  }
-
+  
   .main-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-
+  
   .carousel .cards {
     grid-auto-columns: calc((100% / 1) - 40px);
   }
-
-  #text-main {
+  
+  #text-main  {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
+  
 }
 
 .nav__link {
@@ -766,7 +763,7 @@ h1+p {
 
   .inicio section {
     padding: 50px 0;
-  }
+}
 }
 
 @media (max-width: 1118px) {
@@ -782,31 +779,30 @@ h1+p {
   .cards .card {
     padding: 20px;
   }
-
   .carousel-2 {
-    max-width: 40%;
-    position: relative;
+  max-width: 40%;
+  position: relative;
+}
+
+.inicio section>div {
+  gap: 20px;
+}
+
+.inicio p {
+  margin: 10px 0 20px 0;
+} 
+
+    /*Footer*/
+    .footer-container{
+      height: auto;
   }
 
-  .inicio section>div {
-    gap: 20px;
+  #infos{
+      flex-direction: column;
   }
 
-  .inicio p {
-    margin: 10px 0 20px 0;
-  }
-
-  /*Footer*/
-  .footer-container {
-    height: auto;
-  }
-
-  #infos {
-    flex-direction: column;
-  }
-
-  #social {
-    flex-direction: column;
+  #social{
+      flex-direction: column;
   }
 }
 
@@ -876,9 +872,7 @@ h1+p {
 .carousel-2 .cards {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 1)
-      /*- 20px*/
-    );
+  grid-auto-columns: calc((100% / 1) /*- 20px*/);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 40px;
@@ -900,8 +894,7 @@ h1+p {
 }
 
 .carousel-2 .cards .card img {
-  width: 100%;
-  ;
+  width: 100%;;
 }
 
 .carousel-2 .cards .card p {
@@ -909,7 +902,7 @@ h1+p {
   text-align: center;
 }
 
-.main-section-sixth>div {
+.main-section-sixth > div {
   display: flex
 }
 
@@ -1022,30 +1015,30 @@ h1+p {
 }
 
 /*Pagina login*/
-#main-login {
-  background: #f6f5f7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
-  height: 950px;
+#main-login{
+	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+    height: 950px;
 }
 
 .container-login {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-    0 10px 10px rgba(0, 0, 0, 0.22);
-  position: relative;
-  overflow: hidden;
-  width: 768px;
-  max-width: 100%;
-  min-height: 480px;
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+	0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
 }
 
-.container-login h1 {
-  font-size: 32px;
+.container-login h1{
+    font-size: 32px;
 }
 
 .container-login button {
@@ -1130,15 +1123,14 @@ h1+p {
 }
 
 @keyframes show {
-  0%, 49.99% {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  50%, 100% {
-    opacity: 1;
-    z-index: 5;
-  }
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
 }
 
 .overlay-container {
