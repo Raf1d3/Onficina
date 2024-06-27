@@ -10,7 +10,7 @@
 
 <body>
 
-    <header class="header-container">
+    <!-- <header class="header-container">
         <nav class="nav-bar container">
             <div class="nav-itens">
                 <div class="nav-logo">
@@ -92,7 +92,7 @@
                 </ul>
             </div>
         </div>
-    </header>
+    </header> -->
 
     <main>
         <section id="main-login">
@@ -150,6 +150,54 @@
                 </div>
             </div>
         </section>
+
+
+        <section id="aviso-mobile">
+            <div class="plataformas" style="height: 700px;">
+
+                <div class="plataformas-texto" style="align-items: center">
+                    <h2>BAIXE NOSSO APLICATIVO</h2>
+                    <p>para acessar sua conta:</p>
+                    <br>
+                    <div class="download-app-mobile">
+                        <a
+                            onclick="umami.track('App: Baixar na Google Play');"
+                            target="_blank" rel="noreferrer" href
+                            class="btn-aplicativo">
+                            <img loading="lazy" width="32" height="32"
+                                alt="Play Store"
+                                src="https://www.sults.com.br/sults/images/icones/rodape/logo_play_store.svg"
+                                style="
+                            width: 32px;
+                        ">
+                            <div class="app-info">
+                                <span class="app-text">Baixar na</span>
+                                <span class="app-name">Google
+                                    Play</span>
+                            </div>
+                        </a>
+                        <a
+                            onclick="umami.track('App: Baixar na App Store');"
+                            href target="_blank" rel="noreferrer"
+                            class="btn-aplicativo">
+                            <img loading="lazy" width="32" height="32"
+                                alt="App Store"
+                                src="https://www.sults.com.br/sults/images/icones/rodape/logo_apple_store.svg"
+                                style="
+                            width: 32px;">
+                            <div class="app-info">
+                                <span class="app-text">Baixar na</span>
+                                <span class="app-name">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <img class="dispositivo" src="assets/img/cel.png" alt>
+
+            </div>
+        </section>
+
+
     </main>
 
 
@@ -179,7 +227,7 @@
                 event.preventDefault();
 
                 window.location.href = "painel-usuario.html";
-            }else{
+            } else {
                 event.preventDefault();
                 errorMessage.style.display = 'block';
                 inputLoginSenha.style.border = "red 1px solid";

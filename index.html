@@ -1,284 +1,324 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="description"
         content="Orçamento para manutenções e compras de peças para veículos de forma rápida e segura!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>OnFicina</title>
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href=style.css>
+
+    <title>ONFICINA</title>
 </head>
 
 <body>
-    <header class="header-container">
-        <nav class="nav-bar container">
+    <!--=============== HEADER ===============-->
+    <header class="header">
+        <nav class="nav container">
             <div class="nav-itens">
-                <div class="nav-logo">
-                    <div class="img-desktop">
-                        <img class="property-logo" src="assets/img/icon_Onficina.png" lang="en" alt="Salesforce Logo">
-                    </div>
-                    <a href="/index.html">
-                        <span class="title-logo">ONFICINA</span>
-                    </a>
-                </div>
-
-
-                <ul class="nav-links" role="menubar">
-                    <li class="dropdown" role="menu">
-                        <a class="nav-links-title" href="#" onclick="menuShow()"> Produtos
-                            <div class="icon">
-                                <span class="icon-arrow"></span>
-                            </div>
-                        </a>
-
-
-                        <div class="box-arrow-space"></div>
-                        <div class="dropdown-menu">
-                            <ul class="dropdown-left">
-                                <li><a class="nav-item-first" role="menuitem" href="#">teste</a></li>
-
-                            </ul>
-                            <ul class="dropdown-right">
-                                <li><a class="nav-item-first" role="menuitem" href="#">teste</a></li>
-                            </ul>
-                        </div>
-
-                    </li>
-                    <li><a class="nav-links-title" href="#">Planos</a></li>
-                    <li><a class="nav-links-title" href="#">Contato</a></li>
-                </ul>
-
-            </div>
-
-            <div class="div-button-desktop">
-                <a class="link-button-watch" href="login.html" aria-label="Faça login " role="button">
-                    <button class="login-button" type="button">Entrar</button>
-                </a>
-            </div>
-
-            <div class="arrow-mobile">
-                <button onclick="menuShow()" type="button">
-                    <div class="logo">
+                <div class="nav__data">
+                    <div class="nav_data_itens">
                         <div class="img-mobile">
                             <img class="property-logo-mobile" src="assets/img/icon_Onficina.png" lang="en"
                                 alt="Salesforce Logo">
                         </div>
                         <span class="title-logo-mobile">ONFICINA</span>
                     </div>
-                    <span class="icon-arrow-mobile"></span>
-                </button>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li><a href="#servico" class="nav__link">Serviços</a></li>
+                        <li class="dropdown__item">
+                            <!-- <div class="nav__link">
+                                    Analytics <i
+                                        class="ri-arrow-down-s-line dropdown__arrow"></i>
+                                </div>
+                                <ul class="dropdown__menu">
+                                    <li><a href="#" class="dropdown__link"><i
+                                                class="ri-pie-chart-line"></i>
+                                            Overview</a></li>
+                                    <li><a href="#" class="dropdown__link"><i
+                                                class="ri-arrow-up-down-line"></i>
+                                            Transactions</a></li>
+                                    <li class="dropdown__subitem">
+                                        <div class="dropdown__link">
+                                            <i class="ri-bar-chart-line"></i>
+                                            Reports <i
+                                                class="ri-add-line dropdown__add"></i>
+                                        </div>
+                                        <ul class="dropdown__submenu">
+                                            <li><a href="#"
+                                                    class="dropdown__sublink"><i
+                                                        class="ri-file-list-line"></i>
+                                                    Documents</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown__sublink"><i
+                                                        class="ri-cash-line"></i>
+                                                    Payments</a></li>
+                                            <li><a href="#"
+                                                    class="dropdown__sublink"><i
+                                                        class="ri-refund-2-line"></i>
+                                                    Refunds</a></li>
+                                        </ul>
+                                    </li>
+                                </ul> -->
+                        </li>
+                        <li><a href="#profissionais" class="nav__link">Profissionais</a></li>
+                        <li><a href="#clientes" class="nav__link">Clientes</a></li>
+                        <li><a href="#contato" class="nav__link">Contato</a></li>
+                    </ul>
+                    <div class="div-button">
+                        <a class="link-button-watch" href="login.html" aria-label="Faça login ">
+                            <button class="login-button" type="button">Entrar</button>
+                        </a>
+                    </div>
+                </div>
             </div>
         </nav>
-
-
-
-        <div class="mobile-menu">
-            <div class="nav-mobile">
-                <ul class="nav-links" role="menubar" aria-haspopup="true">
-                    <li class="dropdown">
-                        <div class="icon">
-                            <button onclick="toggleMobileDropdown()" type="button">
-                                <a class="nav-links-title" href="#">Produtos</a>
-                                <div class="div-icon-arrow"><span class="icon-arrow"></span></div>
-                            </button>
-                        </div>
-                        <div class="popup">
-                            <span class="icon-arrow-popup"></span>
-                        </div>
-                        <div class="dropdown-menu-mobile" role="menu">
-                            <ul class="dropdown-left-right">
-                                <li><a class="nav-item" role="menuitem" href="#">teste</a></li>
-                                <li><a class="nav-item" role="menuitem" href="#">teste</a></li>
-                                <li><a class="nav-item" role="menuitem" href="#">teste</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a class="nav-links-title" href="#">Planos</a></li>
-                    <li><a class="nav-links-title" href="#">Contato</a></li>
-                </ul>
-            </div>
-
-            <div class="div-button">
-                <a class="link-button-watch" href="cadastro.html" aria-label="Faça login ">
-                    <button class="login-button" type="button">Entrar</button>
-                </a>
-            </div>
-        </div>
     </header>
 
-    <main>
-        <section class="main-section">
-            <div id="text-main">
-                <h1>Sua oficina mais perto de você!</h1>
-                <p>Orçamento para manutenções e compras de peças para veículos de forma rápida e segura!</p>
-                <button>Experimente!</button>
-                <button>Seja um profissional</button>
-            </div>
-            <img src="assets/img/Bloco 1/tl.webp" alt="">
-        </section>
-        <section class="main-section-secundary">
-            <div class="content-secundary">
-                <div id="text-secundary">
-                    <h1>CONHEÇA NOSSOS SERVIÇOS</h1>
-                    <p>Com a Onficina, você tem acesso a uma vasta gama de produtos, peças e serviços veiculares de
-                        forma
-                        prática e segura. Nossa plataforma online permite que você obtenha orçamentos detalhados para
-                        diversos serviços, desde manutenções rotineiras até reparos mais complexos.</p>
+    <main class="inicio">
+        <section class="introducao">
+            <div id="text-main" class="teste container">
+                <div class="main-text">
+                    <h1>Sua oficina mais perto de você!</h1>
+                    <p>Orçamento para manutenções e compras de peças para
+                        veículos de forma rápida e segura!</p>
+                    <button>Experimente!</button>
+                    <button>Seja um profissional</button>
                 </div>
+                <img src="/assets/img/car.png" alt>
+            </div>
+        </section>
+        <div id="wave-transition"></div>
+        <section id="servico" class="main-section-secundary">
+            <div class="content-secundary container">
+
+                <h2>CONHEÇA NOSSOS SERVIÇOS</h2>
+                <p>Com a Onficina, você tem acesso a uma vasta gama de
+                    produtos, peças e serviços veiculares de
+                    forma
+                    prática e segura. Nossa plataforma online permite
+                    que você obtenha orçamentos detalhados para
+                    diversos serviços, desde manutenções rotineiras até
+                    reparos mais complexos.</p>
+
                 <div class="carousel">
-                    <i id="left"> <img src="assets/img/Carousel/arrow-left.svg" alt=""></i>
+                    <i id="left"> <img src="assets/img/Carousel/arrow-left.svg" alt></i>
                     <ul class="cards">
                         <li class="card">
                             <div class="img"><img src="assets/img/Bloco 2/img-Peças.png" alt="img" draggable="false">
                             </div>
-                            <p>Faça compra de produtos e peças para veículos de forma rápida e segura!</p>
+                            <p>Faça compra de produtos e peças para veículos
+                                de forma rápida e segura!</p>
                         </li>
                         <li class="card">
                             <div class="img" id="notification"><img src="assets/img/Bloco 2/img-notificacoes.png"
                                     alt="img" draggable="false"></div>
-                            <p>Receba notificações e saiba quando realizar manutenções peventivas.</p>
+                            <p>Receba notificações e saiba quando realizar
+                                manutenções peventivas.</p>
                         </li>
                         <li class="card">
                             <div class="img"><img src="assets/img/Bloco 2/img-profissional.png" alt="img"
                                     draggable="false">
                             </div>
-                            <p>Faça seu orçamento com nossos profissionais e agende sua manutenção online.</p>
+                            <p>Faça seu orçamento com nossos profissionais e
+                                agende sua manutenção online.</p>
                         </li>
                     </ul>
-                    <i id="right"><img src="assets/img/Carousel/arrow-right.svg" alt=""></i>
+                    <i id="right"><img src="assets/img/Carousel/arrow-right.svg" alt></i>
                 </div>
             </div>
         </section>
-        <section class="main-section-third">
-            <div class="content-third container">
-                <img src="assets/img/Bloco 3/img-brasil.png" alt="">
-                <div id="text-third">
-                    <h1>TENHA ACESSO AS MELHORES PRESTADORAS DE SERVIÇO VEICULAR DA SUA REGIÃO</h1>
-                    <p>Na Onficina, você encontra as melhores prestadoras de serviço veicular da sua região com
+        <section>
+            <div class="container">
+                <img src="assets/img/Bloco 3/img-brasil.png" alt>
+                <div>
+                    <h2>TENHA ACESSO AS MELHORES PRESTADORAS DE SERVIÇO
+                        VEICULAR DA SUA REGIÃO</h2>
+                    <p>Na Onficina, você encontra as melhores prestadoras de
+                        serviço veicular da sua região com
                         facilidade.
-                        Nossa plataforma permite que você visualize a reputação de cada prestadora, classificando as
+                        Nossa plataforma permite que você visualize a
+                        reputação de cada prestadora, classificando as
                         mais
                         bem
-                        avaliadas para facilitar sua escolha. Além disso, você pode filtrar as opções por preço de
-                        peças/serviços, localização e reputação, garantindo uma decisão informada e confiável. Encontre
-                        rapidamente a prestadora ideal para suas necessidades e tenha a certeza de um serviço de
+                        avaliadas para facilitar sua escolha. Além disso,
+                        você pode filtrar as opções por preço de
+                        peças/serviços, localização e reputação, garantindo
+                        uma decisão informada e confiável. Encontre
+                        rapidamente a prestadora ideal para suas
+                        necessidades e tenha a certeza de um serviço de
                         qualidade.
                     </p>
                 </div>
+
             </div>
         </section>
-        <section class="main-section-fourth">
-            <div class="content-fourth container">
-                <div id="text-fourth">
-                    <h1>COMUNICAÇÃO FACILITADA COM PROFISSIONAIS QUALIFICADOS</h1>
-                    <p>Na Onficina, garantimos uma comunicação ágil e eficiente com profissionais qualificados através
+        <section>
+            <div class="container">
+                <div>
+                    <h2>COMUNICAÇÃO FACILITADA COM PROFISSIONAIS
+                        QUALIFICADOS</h2>
+                    <p>Na Onficina, garantimos uma comunicação ágil e
+                        eficiente
+                        com profissionais qualificados através
                         de um
-                        chat integrado. Com essa ferramenta, você pode trocar mensagens e fazer ligações diretamente com
+                        chat integrado. Com essa ferramenta, você pode
+                        trocar
+                        mensagens e fazer ligações diretamente com
                         os
-                        prestadores de serviço, garantindo um atendimento personalizado e imediato.</p>
+                        prestadores de serviço, garantindo um atendimento
+                        personalizado e imediato.</p>
                 </div>
-                <img src="assets/img/Bloco 4/img-chat.png" alt="">
+                <img src="assets/img/Bloco 4/img-chat.png" alt>
             </div>
         </section>
-        <section class="main-section-fifth">
-            <div class="content-fifth container">
-                <img src="assets/img/Bloco 5/img-connections.png" alt="">
-                <div id="text-fifth">
-                    <h1>TENHA ACESSO AOS MELHORES PREÇOS DE FORMA FACIL E RAPIDA</h1>
-                    <p>Encontrar os melhores preços para produtos e serviços veiculares é simples e rápido. Nossa
+        <section>
+            <div class="teste container">
+                <img src="assets/img/Bloco 5/img-connections.png" alt>
+                <div>
+                    <h2>TENHA ACESSO AOS MELHORES PREÇOS DE FORMA FACIL E
+                        RAPIDA</h2>
+                    <p>Encontrar os melhores preços para produtos e serviços
+                        veiculares é simples e rápido. Nossa
                         plataforma
-                        conta com uma seção dedicada onde prestadores de serviço podem anunciar seus produtos de maneira
+                        conta com uma seção dedicada onde prestadores de
+                        serviço
+                        podem anunciar seus produtos de maneira
                         fácil e
-                        segura, garantindo transparência e segurança tanto para os prestadores quanto para os clientes.
+                        segura, garantindo transparência e segurança tanto
+                        para
+                        os prestadores quanto para os clientes.
                         Compare
-                        ofertas, escolha a melhor opção e economize tempo e dinheiro com a praticidade que só a Onficina
+                        ofertas, escolha a melhor opção e economize tempo e
+                        dinheiro com a praticidade que só a Onficina
                         oferece.</p>
                 </div>
             </div>
         </section>
-        <section class="main-section-sixth">
-            <div id="text-sixth">
-                <h1>SEJA UM PROFISSIONAL</h1>
-                <p>Cadastre sua empresa para impulsionar seu negocio</p>
-            </div>
-            <div class="content-sixth container">
-                <div class="carousel-2">
-                    <i id="left"> <img src="assets/img/Carousel/arrow-left.svg" alt=""></i>
-                    <ul class="cards">
-                        <li class="card">
-                            <div class="img"><img src="assets/img/Bloco 6/img-oficinas.png" alt="img" draggable="false">
-                            </div>
-                            <p>Oficinas</p>
-                        </li>
-                        <li class="card">
-                            <div class="img"><img src="assets/img/Bloco 6/img-revendedora-pecas.png" alt="img"
-                                    draggable="false"></div>
-                            <p>Revendedora de peças</p>
-                        </li>
-                        <li class="card">
-                            <div class="img"><img src="assets/img/Bloco 6/img-centro-automotivo.png" alt="img"
-                                    draggable="false">
-                            </div>
-                            <p>Centros Automotivos</p>
-                        </li>
-                        <li class="card">
-                            <div class="img"><img src="assets/img/Bloco 6/img-desmanche.png" alt="img"
-                                    draggable="false">
-                            </div>
-                            <p>Desmanches</p>
-                        </li>
-                        <li class="card">
-                            <div class="img"><img src="assets/img/Bloco 6/img-estetica-automotiva.png" alt="img"
-                                    draggable="false">
-                            </div>
-                            <p>Estetica automotiva</p>
-                        </li>
-                        <li class="card">
-                            <div class="img"><img src="assets/img/Bloco 6/img-funilaria-pintura.png" alt="img"
-                                    draggable="false">
-                            </div>
-                            <p>Funilaria e Pintura</p>
-                        </li>
-                        <li class="card">
-                            <div class="img"><img src="assets/img/Bloco 6/img-reboque.png" alt="img" draggable="false">
-                            </div>
-                            <p>Serviços de Reboque</p>
-                        </li>
-                    </ul>
-                    <i id="right"><img src="assets/img/Carousel/arrow-right.svg" alt=""></i>
+        <section id="profissionais" class="main-section-sixth">
+            <div class="container" style="flex-direction: column; gap:0;">
+                <div id="text-sixth">
+                    <h2>SEJA UM PROFISSIONAL</h2>
+                    <p>Cadastre sua empresa para impulsionar seu negocio</p>
                 </div>
-                <img src="assets/img/Bloco 6/img-profissional-2.png" id="img-profissional-2" alt="">
-            </div>
-        </section>
-        <section class="main-section-seventh">
-            <div class="content-seventh container">
-                <h1>JUNTE-SE AOS NOSSOS CLIENTES</h1>
-                <img src="assets/img/Bloco 7/img-marcas.png" alt="">
-            </div>
-        </section>
-        <section class="main-section-eighth">
-            <div class="content-eighth container">
-                <div id="text-eighth">
-                    <h1>DISPONIVEL EM<br> TODAS AS PLATAFORMAS</h1>
-                    <p>Sua oficina na palma da sua mão</p>
-                    <a href="#"><img src="/assets/img/Bloco 8/img-googleplay.png" alt=""></a>
-                    <a href="#"><img src="/assets/img/Bloco 8/img-appstore.png" alt=""></a>
+                <div class="content-sixth">
+                    <div class="carousel-2">
+                        <i id="left"> <img src="assets/img/Carousel/arrow-left.svg" alt></i>
+                        <ul class="cards">
+                            <li class="card">
+                                <div class="img"><img src="assets/img/Bloco 6/img-oficinas.png" alt="img"
+                                        draggable="false">
+                                </div>
+                                <p>Oficinas</p>
+                            </li>
+                            <li class="card">
+                                <div class="img"><img src="assets/img/Bloco 6/img-revendedora-pecas.png" alt="img"
+                                        draggable="false"></div>
+                                <p>Revendedora de peças</p>
+                            </li>
+                            <li class="card">
+                                <div class="img"><img src="assets/img/Bloco 6/img-centro-automotivo.png" alt="img"
+                                        draggable="false">
+                                </div>
+                                <p>Centros Automotivos</p>
+                            </li>
+                            <li class="card">
+                                <div class="img"><img src="assets/img/Bloco 6/img-desmanche.png" alt="img"
+                                        draggable="false">
+                                </div>
+                                <p>Desmanches</p>
+                            </li>
+                            <li class="card">
+                                <div class="img"><img src="assets/img/Bloco 6/img-estetica-automotiva.png" alt="img"
+                                        draggable="false">
+                                </div>
+                                <p>Estetica automotiva</p>
+                            </li>
+                            <li class="card">
+                                <div class="img"><img src="assets/img/Bloco 6/img-funilaria-pintura.png" alt="img"
+                                        draggable="false">
+                                </div>
+                                <p>Funilaria e Pintura</p>
+                            </li>
+                            <li class="card">
+                                <div class="img"><img src="assets/img/Bloco 6/img-reboque.png" alt="img"
+                                        draggable="false">
+                                </div>
+                                <p>Serviços de Reboque</p>
+                            </li>
+                        </ul>
+                        <i id="right"><img src="assets/img/Carousel/arrow-right.svg" alt></i>
+                    </div>
+                    <img src="assets/img/Bloco 6/img-profissional-2.png" id="img-profissional-2" alt>
                 </div>
-                <img src="/assets/img/Bloco 8/img-dispositivos.png" alt="">
             </div>
         </section>
-        <!--
-        <div class="main-section-salesblazers"></div>
-        <div class="main-section-keep"></div>
-        <div class="main-section-ready"></div>
-        <div class="main-section-top-footer"></div>
-        -->
+        <section id="clientes" class="clientes-section">
+            <div class="teste container center">
+                <div class="clientes">
+                    <h2>JUNTE-SE AOS NOSSOS CLIENTES</h2>
+                    <img style="max-width: 1000px;" src="assets/img/Bloco 7/img-marcas.png" alt>
+                </div>
 
+            </div>
+        </section>
+        <section>
+
+            <div class="teste container">
+
+                <div class="plataformas">
+
+                    <div class="plataformas-texto">
+                        <h2>DISPONIVEL EM TODAS AS PLATAFORMAS</h2>
+                        <p>Sua oficina na palma da sua mão</p>
+                        <div class="download-app-mobile">
+                            <a onclick="umami.track('App: Baixar na Google Play');" target="_blank" rel="noreferrer"
+                                href class="btn-aplicativo">
+                                <img loading="lazy" width="32" height="32" alt="Play Store"
+                                    src="https://www.sults.com.br/sults/images/icones/rodape/logo_play_store.svg" style="
+                                    width: 32px;
+                                ">
+                                <div class="app-info">
+                                    <span class="app-text">Baixar na</span>
+                                    <span class="app-name">Google
+                                        Play</span>
+                                </div>
+                            </a>
+                            <a onclick="umami.track('App: Baixar na App Store');" href target="_blank" rel="noreferrer"
+                                class="btn-aplicativo">
+                                <img loading="lazy" width="32" height="32" alt="App Store"
+                                    src="https://www.sults.com.br/sults/images/icones/rodape/logo_apple_store.svg"
+                                    style="
+                                    width: 32px;">
+                                <div class="app-info">
+                                    <span class="app-text">Baixar na</span>
+                                    <span class="app-name">App Store</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <img class="dispositivo" src="assets/img/cel.png" alt>
+
+                </div>
+            </div>
+
+        </section>
     </main>
-
-    <footer class="footer-container">
+    <footer id="contato" class="footer-container">
         <section id="infos">
             <img src="assets/img/Logo horizontal completa.svg">
             <div class="info">
@@ -291,7 +331,8 @@
             </div>
             <div class="info">
                 <h3>Aplicativo</h3>
-                <p>Baixe nosso aplicativo e desfrute de todos os nossos seviços.</p>
+                <p>Baixe nosso aplicativo e desfrute de todos os nossos
+                    seviços.</p>
             </div>
             <div class="info">
                 <h3>Contato</h3>
@@ -299,33 +340,35 @@
             </div>
         </section>
         <hr id="linha">
-        <section id="social">
+        <section id="social" class="teste container">
             <div id="options-linguage">
-                <img src="/assets/img/icon_idioma.png" alt="">
+                <img src="/assets/img/icon_idioma.png" alt>
                 <select name="idioma">
-                    <option value="">Portugues</option>
-                    <option value="">Ingles</option>
+                    <option value>Portugues</option>
+                    <option value>Ingles</option>
                 </select>
             </div>
-            <p>Direitos autorais Onficina. 2024. Todos os direitos reservados.</p>
+            <p>Direitos autorais Onficina. 2024. Todos os direitos
+                reservados.</p>
             <nav class="bots_social">
 
                 <ul>
-                    <li><a href="#" target="_blank" title="facebook"><img src="/assets/img/icon-insta.svg" alt=""></a>
+                    <li><a href="#" target="_blank" title="facebook"><img src="/assets/img/icon-insta.svg" alt></a>
                     </li>
-                    <li><a href="#" target="_blank" title="instagram"><img src="/assets/img/icon-face.svg" alt=""></a>
+                    <li><a href="#" target="_blank" title="instagram"><img src="/assets/img/icon-face.svg" alt></a>
                     </li>
-                    <li><a href="#" target="_blank" title="youtube"><img src="/assets/img/icon-linkedin.svg" alt=""></a>
+                    <li><a href="#" target="_blank" title="youtube"><img src="/assets/img/icon-linkedin.svg" alt></a>
                     </li>
-                    <li><a href="#" target="_blank" title="youtube"><img src="/assets/img/icon-twitter.svg" alt=""></a>
+                    <li><a href="#" target="_blank" title="youtube"><img src="/assets/img/icon-twitter.svg" alt></a>
                     </li>
-                    <li><a href="#" target="_blank" title="linkdin"><img src="/assets/img/icon-youtube.svg" alt=""></a>
+                    <li><a href="#" target="_blank" title="linkdin"><img src="/assets/img/icon-youtube.svg" alt></a>
                     </li>
                 </ul>
             </nav>
         </section>
     </footer>
 
+    <!--=============== MAIN JS ===============-->
     <script src="script.js"></script>
 </body>
 
