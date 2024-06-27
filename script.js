@@ -165,3 +165,7 @@ carousel.addEventListener("mouseleave", autoPlay);
 carousel2.addEventListener("mouseenter", () => clearTimeout(timeoutId2));
 carousel2.addEventListener("mouseleave", autoPlay2);
 
+/*
+CADASTRO
+*/
+

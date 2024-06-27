@@ -513,7 +513,7 @@ h1+p {
   color: var(--color-black-background);
 }
 
-#text-main button {
+#text-main a {
   font-family: 'DM Sans', sans-serif;
   border: none;
   padding: 15px 18px;
@@ -524,11 +524,12 @@ h1+p {
   cursor: pointer;
 }
 
-#text-main button:first-of-type {
+#text-main a:first-of-type {
   background-color: var(--color-white-background);
+  color: black;
 }
 
-#text-main button:nth-of-type(2) {
+#text-main a:nth-of-type(2) {
   background-color: var(--color-blue-background);
   color: white;
 }
@@ -1086,13 +1087,6 @@ h1+p {
 	width: 100%;
 }
 
-.form-container {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	transition: all 0.6s ease-in-out;
-}
-
 .form-container a{
     margin: 10px 0 10px;
 }
@@ -1233,3 +1227,4 @@ width: 18px;
     margin-bottom: 10px;
     display: none;
 }
+
