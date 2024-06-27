@@ -33,6 +33,10 @@ a {
   text-decoration: none;
 }
 
+button, a {
+  cursor: pointer;
+}
+
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
@@ -513,7 +517,7 @@ h1+p {
   color: var(--color-black-background);
 }
 
-#text-main button {
+#text-main a {
   font-family: 'DM Sans', sans-serif;
   border: none;
   padding: 15px 18px;
@@ -524,11 +528,12 @@ h1+p {
   cursor: pointer;
 }
 
-#text-main button:first-of-type {
+#text-main a:first-of-type {
   background-color: var(--color-white-background);
+  color: black;
 }
 
-#text-main button:nth-of-type(2) {
+#text-main a:nth-of-type(2) {
   background-color: var(--color-blue-background);
   color: white;
 }
@@ -1218,6 +1223,7 @@ h1+p {
 .social-container img {
   width: 18px;
 }
+
 
 .social-container a {
   border: 1px solid #DDDDDD;

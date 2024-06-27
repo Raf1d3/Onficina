@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style-continue-page.css">
+        <link rel="icon" href="assets/img/icon_Onficina.png">
+		 
+        <title>ONFICINA: Cadastro concluido!</title>
+		<style>
+		* {
+			font-family: sans-serif;
+			padding: 0;
+			margin: 0;
+		}
+		
+		.initial-container {
+			width: 100%;
+			height: 100vh;
+			background: #4157FF;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.logo-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 500px;
+			padding-bottom: 10px;
+		}
+		
+		.initial-logo {
+			width: 200px;
+		}
+		
+		.card-verificad {
+			width: 50%;
+			height: 600px;
+			background: white;
+			overflow: hidden;
+			border-radius: 20px;
+			box-shadow: 0 0 2px 0 rgb(34 47 62/20%), 0 4px 8px 0 rgb(34 47 62/15%);
+			border: 1px solid #d5d5d5;
+		}
+		
+		.card-verificad {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		
+		.verification-container {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		
+		.img-confirmation {
+			width: 40%;
+		}
+		
+		.text-conteiner {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+		}
+		
+		.text-conteiner h1 {
+			padding: 20px 20px 0px;
+			font-size: 35px;
+			text-align: center;
+		}
+		
+		.text-conteiner p {
+			padding: 20px 20px 0px;
+			text-align: center;
+			font-size: 30px;
+		}
+		
+		.button-sults {
+			display: flex;
+			justify-content: center;
+			padding-top: 30px;
+		}
+		
+		.button-sults button {
+			padding: 20px 50px;
+			border-radius: 8px;
+			border: 1px solid transparent;
+			background: #4157FF;
+			color: white;
+			text-transform: uppercase;
+			font-size: 1rem;
+			font-weight: 700;
+			letter-spacing: 2px;
+			cursor: pointer;
+		}
+		
+		.button-sults button:focus {
+			box-shadow: 0px 0px 0px 3px #B6D6F2;
+		}
+		
+		@media only screen and (max-width: 768px) {
+			.logo-container {
+				width: 100%;
+			}
+		
+			.card-verificad {
+				width: 100%;
+			}
+		
+			.logo-container {
+				display: none;
+			}
+		}
+		
+		@media only screen and (max-width: 320px) {
+			.verification-container {
+				display: none;
+			}
+		}
+		</style>
+    </head>
+    <body>
+        <main>
+            <div class="initial-container">
+                
+                <div class="card-verificad">
+					
+                    <div class="verification-container">
+						<a href="index.html">
+                        <img class="initial-logo" src="assets/img/icon_Onficina.png"  alt="imagem confirmacao de cadastro">
+					</a>
+                    </div>
+                    <div class="text-conteiner">
+                        <h1> Agradecemos pela preferência!</h1>
+                        <p class> Recebemos sua solicitação, em breve nossa equipe entrará em contato! </p>
+                    </div>
+                    <!-- <div class="button-sults">
+                        <a href="https://www.sults.com.br">
+                            <button class="btn-initial-page">Voltar</button>
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
