@@ -813,12 +813,12 @@ h1+p {
 */
 /*Bloco 6*/
 .content-sixth {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 120px;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 120px;
+  width: 100%;
+  height: 100%;
 }
 
 #img-profissional-2 {
@@ -1041,84 +1041,85 @@ h1+p {
     font-size: 32px;
 }
 
-.container-login button{
-    border-radius: 20px;
-	border: 1px solid #4157FF;
-	background-color: #4157FF;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+.container-login button {
+  border-radius: 20px;
+  border: 1px solid #4157FF;
+  background-color: #4157FF;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
 }
 
-.container-login button:active{
-    transform: scale(0.95);
+.container-login button:active {
+  transform: scale(0.95);
 }
 
-.container-login button:focus{
-    outline: none;
+.container-login button:focus {
+  outline: none;
 }
 
 .container-login button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
+  background-color: transparent;
+  border-color: #FFFFFF;
 }
 
-.container-login form{
-    background-color: #FFFFFF;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 50px;
-	height: 100%;
-	text-align: center;
+.container-login form {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
 }
 
 .container-login input {
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 100%;
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
 }
 
 .form-container {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	transition: all 0.6s ease-in-out;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
 }
 
-.form-container a{
-    margin: 10px 0 10px;
+.form-container a {
+  margin: 10px 0 10px;
+  color: #000000;
 }
 
 .entrar-container {
-	left: 0;
-	width: 50%;
-	z-index: 2;
+  left: 0;
+  width: 50%;
+  z-index: 2;
 }
 
 .container-login.right-panel-active .entrar-container {
-	transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 .cadastro-container {
-	left: 0;
-	width: 50%;
-	opacity: 0;
-	z-index: 1;
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
 }
 
 .container-login.right-panel-active .cadastro-container {
-	transform: translateX(100%);
-	opacity: 1;
-	z-index: 5;
-	animation: show 0.6s;
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
 }
 
 @keyframes show {
@@ -1133,103 +1134,121 @@ h1+p {
 }
 
 .overlay-container {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 50%;
-	height: 100%;
-	overflow: hidden;
-	transition: transform 0.6s ease-in-out;
-	z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
 }
 
-.container-login.right-panel-active .overlay-container{
-	transform: translateX(-100%);
+.container-login.right-panel-active .overlay-container {
+  transform: translateX(-100%);
 }
 
 .overlay {
-	background: linear-gradient(to right, #3430f3, #4157FF);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
-	color: #FFFFFF;
-	position: relative;
-	left: -100%;
-	height: 100%;
-	width: 200%;
-  	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
+  background: linear-gradient(to right, #3430f3, #4157FF);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
 }
 
 .container-login.right-panel-active .overlay {
-  	transform: translateX(50%);
+  transform: translateX(50%);
 }
 
 .overlay-panel {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
-	top: 0;
-	height: 100%;
-	width: 50%;
-	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
 }
 
-.overlay-panel h1{
-    color: white;
+.overlay-panel h1 {
+  color: white;
 }
 
 .overlay-panel p {
-    font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
-    width: 300px;
+  color: white;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+  width: 300px;
 }
 
 .overlay-left {
-	transform: translateX(-20%);
+  transform: translateX(-20%);
 }
 
 .container-login.right-panel-active .overlay-left {
-	transform: translateX(0);
+  transform: translateX(0);
 }
 
 .overlay-right {
-	right: 0;
-	transform: translateX(0);
+  right: 0;
+  transform: translateX(0);
 }
 
 .container-login.right-panel-active .overlay-right {
-	transform: translateX(20%);
+  transform: translateX(20%);
 }
 
 .social-container {
-	margin: 20px 0;
+  margin: 20px 0;
 }
 
-.social-container img{
-width: 18px;
+.social-container img {
+  width: 18px;
 }
 
 .social-container a {
-	border: 1px solid #DDDDDD;
-	border-radius: 50%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
 }
 
 .error-message {
-    color: red;
-    margin-bottom: 10px;
+  color: red;
+  margin-bottom: 10px;
+  display: none;
+}
+
+
+
+#aviso-mobile{
+display: none;
+
+}
+
+
+@media (max-width: 800px) {
+  #main-login{
     display: none;
+  }
+  #aviso-mobile{
+    display: block;
+  }
 }
