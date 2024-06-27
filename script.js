@@ -70,11 +70,8 @@ window.addEventListener('scroll', function(event) {
 
 
 
-
-
-
-
-
+// lading page
+//carrossel
 const carousel = document.querySelector(".carousel");
 const carousel2 = document.querySelector(".carousel-2");
 const cards = document.querySelectorAll(".cards")[0];
@@ -89,11 +86,10 @@ const cardsChildrens2 = [...cards2.children];
 
 let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
 let isDragging2 = false, isAutoPlay2 = true, startX2, startScrollLeft2, timeoutId2;
-// Get the number of cards that can fit in the cards at once
+
 let cardPerView = Math.round(cards.offsetWidth / firstCardWidth);
 let cardPerView2 = Math.round(cards2.offsetWidth / firstCardWidth2);
 
-// Insert copies of the last few cards to beginning of cards for infinite scrolling
 cardsChildrens.slice(-cardPerView).reverse().forEach(card => {
     cards.insertAdjacentHTML("afterbegin", card.outerHTML);
 });
@@ -101,7 +97,6 @@ cardsChildrens2.slice(-cardPerView2).reverse().forEach(card => {
     cards2.insertAdjacentHTML("afterbegin", card.outerHTML);
 });
 
-// Insert copies of the first few cards to end of cards for infinite scrolling
 cardsChildrens.slice(0, cardPerView).forEach(card => {
     cards.insertAdjacentHTML("beforeend", card.outerHTML);
 });
@@ -110,7 +105,6 @@ cardsChildrens2.slice(0, cardPerView2).forEach(card => {
 });
 
 
-// Scroll the cards at appropriate postition to hide first few duplicate cards on Firefox
 cards.classList.add("no-transition");
 cards.scrollLeft = cards.offsetWidth;
 cards.classList.remove("no-transition");
@@ -119,7 +113,6 @@ cards2.classList.add("no-transition");
 cards2.scrollLeft = cards2.offsetWidth;
 cards2.classList.remove("no-transition");
 
-// Add event listeners for the arrow buttons to scroll the cards left and right
 arrowBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         cards.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
@@ -135,7 +128,6 @@ arrowBtns2.forEach(btn => {
 const dragStart = (e) => {
     isDragging = true;
     cards.classList.add("dragging");
-    // Records the initial cursor and scroll position of the cards
     startX = e.pageX;
     startScrollLeft = cards.scrollLeft;
 }
@@ -143,20 +135,17 @@ const dragStart = (e) => {
 const dragStart2 = (e) => {
     isDragging2 = true;
     cards2.classList.add("dragging");
-    // Records the initial cursor and scroll position of the cards
     startX2 = e.pageX;
     startScrollLeft2 = cards2.scrollLeft;
 }
 
 const dragging = (e) => {
-    if(!isDragging) return; // if isDragging is false return from here
-    // Updates the scroll position of the cards based on the cursor movement
+    if(!isDragging) return; 
     cards.scrollLeft = startScrollLeft - (e.pageX - startX);
 }
 
 const dragging2 = (e) => {
-    if(!isDragging2) return; // if isDragging is false return from here
-    // Updates the scroll position of the cards based on the cursor movement
+    if(!isDragging2) return;
     cards2.scrollLeft = startScrollLeft2 - (e.pageX - startX2);
 }
 
@@ -171,20 +160,17 @@ const dragStop2 = () => {
 }
 
 const infiniteScroll = () => {
-    // If the cards is at the beginning, scroll to the end
     if(cards.scrollLeft === 0) {
         cards.classList.add("no-transition");
         cards.scrollLeft = cards.scrollWidth - (2 * cards.offsetWidth);
         cards.classList.remove("no-transition");
     }
-    // If the cards is at the end, scroll to the beginning
     else if(Math.ceil(cards.scrollLeft) === cards.scrollWidth - cards.offsetWidth) {
         cards.classList.add("no-transition");
         cards.scrollLeft = cards.offsetWidth;
         cards.classList.remove("no-transition");
     }
 
-    // Clear existing timeout & start autoplay if mouse is not hovering over cards
     clearTimeout(timeoutId);
     if(!carousel.matches(":hover")) autoPlay();
 }
@@ -192,34 +178,29 @@ const infiniteScroll = () => {
 
 
 const infiniteScroll2 = () => {
-    // If the cards is at the beginning, scroll to the end
     if(cards2.scrollLeft === 0) {
         cards2.classList.add("no-transition");
         cards2.scrollLeft = cards2.scrollWidth - (2 * cards2.offsetWidth);
         cards2.classList.remove("no-transition");
     }
-    // If the cards is at the end, scroll to the beginning
     else if(Math.ceil(cards2.scrollLeft) === cards2.scrollWidth - cards2.offsetWidth) {
         cards2.classList.add("no-transition");
         cards2.scrollLeft = cards2.offsetWidth;
         cards2.classList.remove("no-transition");
     }
 
-    // Clear existing timeout & start autoplay if mouse is not hovering over cards
     clearTimeout(timeoutId2);
     if(!carousel2.matches(":hover")) autoPlay2();
 }
 
 
 const autoPlay = () => {
-    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
-    // Autoplay the cards after every 2500 ms
+    if(window.innerWidth < 800 || !isAutoPlay) return;
     timeoutId = setTimeout(() => cards.scrollLeft += firstCardWidth, 2500);
 }
 
 const autoPlay2 = () => {
-    if(window.innerWidth < 800 || !isAutoPlay2) return; // Return if window is smaller than 800 or isAutoPlay is false
-    // Autoplay the cards after every 2500 ms
+    if(window.innerWidth < 800 || !isAutoPlay2) return;
     timeoutId2 = setTimeout(() => cards2.scrollLeft += firstCardWidth2, 2500);
 }
 
@@ -238,3 +219,4 @@ carousel.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 carousel.addEventListener("mouseleave", autoPlay);
 carousel2.addEventListener("mouseenter", () => clearTimeout(timeoutId2));
 carousel2.addEventListener("mouseleave", autoPlay2);
+
