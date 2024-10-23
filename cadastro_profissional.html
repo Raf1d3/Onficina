@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Profissional ou Empresa</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #4157FF;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            background-color: #ffffff;
+            color: #4157FF;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #e0e0e0;
+        }
+        form {
+            display: none;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .submit-btn {
+            background-color: white;
+            color: #4157FF;
+            border: 2px solid #4157FF;
+        }
+        .submit-btn:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro</h1>
+        <button id="btnEmpresa">Possuo uma empresa</button>
+        <button id="btnAutonomo">Sou profissional autônomo</button>
+
+        <form id="empresaForm" action="cadastro_empresa.php" method="POST">
+            <h2>Cadastro de Empresa</h2>
+            <input type="text" name="nome_responsavel" placeholder="Nome Completo" required>
+            <input type="text" name="cpf_responsavel" placeholder="CPF" required>
+            <input type="text" name="nome_empresa" placeholder="Nome da Empresa" required>
+            <input type="text" name="endereco" placeholder="Endereço" required>
+            <input type="tel" name="telefone" placeholder="Telefone" required>
+            <input type="email" name="email_empresa" placeholder="Email" required>
+            <input type="text" name="cnpj" placeholder="CNPJ" required>
+            <input type="password" name="senha" placeholder="Senha" required> <!-- Campo de senha adicionado -->
+            <button type="submit" class="submit-btn">Cadastrar Empresa</button>
+        </form>
+
+        <form id="autonomoForm" action="cadastro_autonomo.php" method="POST">
+            <h2>Cadastro de Profissional Autônomo</h2>
+            <input type="text" name="nome" placeholder="Nome Completo" required>
+            <input type="text" name="cpf" placeholder="CPF" required>
+            <input type="tel" name="telefone" placeholder="Telefone" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="senha" placeholder="Senha" required> <!-- Campo de senha adicionado -->
+            <button type="submit" class="submit-btn">Cadastrar Profissional</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('btnEmpresa').addEventListener('click', function() {
+            document.getElementById('empresaForm').style.display = 'block';
+            document.getElementById('autonomoForm').style.display = 'none';
+        });
+
+        document.getElementById('btnAutonomo').addEventListener('click', function() {
+            document.getElementById('autonomoForm').style.display = 'block';
+            document.getElementById('empresaForm').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

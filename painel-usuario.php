@@ -5,7 +5,7 @@ include 'conexao_bd.php'; // Inclui o arquivo de conexão com o banco de dados
 
 // Verificar se o usuário está logado
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html"); // Redireciona para a página de login se não estiver logado
+    header("Location: login.php"); // Redireciona para a página de login se não estiver logado
     exit;
 }
 

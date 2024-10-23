@@ -35,9 +35,9 @@ if ($result->num_rows > 0) {
     $stmt->bind_param('sss', $nome, $email, $senha);
 
     if ($stmt->execute()) {
-        // Redirecionar após cadastro bem-sucedido
-        header('Location: painel-usuario.html');
-        exit;
+        // Redirecionar após cadastro bem-sucedido com mensagem
+        echo "<script>alert('Cadastro realizado com sucesso!'); window.location.href='login.html';</script>";
+        exit; // Adicione este exit para garantir que o script pare aqui
     } else {
         // Erro ao inserir
         echo "Erro: " . $stmt->error;
