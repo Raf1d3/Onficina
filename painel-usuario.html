@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" href="assets/img/icon_Onficina.png">
+    <meta charset="UTF-8">
+    <title>Painel do Usuário - ONFICINA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            padding: 10px 0;
+        }
+
+        .card ul li + li {
+            border-top: 1px solid #ddd; 
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .logout {
+            color: white;
+            background-color: #dc3545;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .logout:hover {
+            background-color: #c82333;
+        }
+
+        .cadastrar-veiculo {
+            margin-top: 20px;
+            display: inline-block;
+            color: white;
+            background-color: #28a745;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .cadastrar-veiculo:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="profile">
+            <img src="assets/img/img-user.png" alt="Foto do Perfil">
+            <span><?php echo htmlspecialchars($nome_usuario); ?></span> <!-- Nome do usuário logado -->
+        </div>
+        <button class="logout">Sair</button>
+    </header>
+    <div class="container">
+        <a href="cadastrar_veiculo.html" class="cadastrar-veiculo">Cadastrar Veículo</a>
+        <div class="card">
+            <h2>Informações dos Veículos cadastrados:</h2>
+            <ul id="lista-veiculos">
+                <?php echo $veiculos_html; ?>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let logout = document.getElementsByClassName("logout")[0];
+        logout.addEventListener("click", () => {
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+
+</html>

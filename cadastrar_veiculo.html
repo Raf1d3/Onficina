@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" href="assets/img/icon_Onficina.png">
+    <meta charset="UTF-8">
+    <title>Cadastrar Veículo - ONFICINA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .cancelar {
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastrar Veículo</h1>
+    </header>
+    <div class="container">
+        <div class="card">
+            <form action="cadastrar_veiculo.php" method="POST">
+                <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" name="marca" required>
+                </div>
+                <div class="form-group">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" name="modelo" required>
+                </div>
+                <div class="form-group">
+                    <label for="ano">Ano:</label>
+                    <input type="number" id="ano" name="ano" required min="1900" max="2100">
+                </div>
+                <div class="form-group">
+                    <label for="placa">Placa:</label>
+                    <input type="text" id="placa" name="placa" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo_veiculo">Tipo de Veículo:</label>
+                    <select id="tipo_veiculo" name="tipo_veiculo" required>
+                        <option value="Carro">Carro</option>
+                        <option value="Moto">Moto</option>
+                        <option value="Caminhão">Caminhão</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Cadastrar</button>
+                <a href="painel-usuario.html" class="cancelar">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
