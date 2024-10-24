@@ -14,7 +14,7 @@ if (!isset($_SESSION['empresa_id'])) {
 // Logout
 if (isset($_POST['logout'])) {
     session_destroy(); // Destroi todas as informações registradas na sessão
-    header("Location: login.php"); // Redireciona para a página de login
+    header("Location: login.html"); // Redireciona para a página de login
     exit();
 }
 

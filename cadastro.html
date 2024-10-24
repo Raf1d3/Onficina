@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/icon_Onficina.png">
+    <title>Cadastro - ONFICINA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .option-container,
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+                0 10px 10px rgba(0, 0, 0, 0.22);
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .option-container h2 {
+            margin-bottom: 30px;
+        }
+
+        .option-container button,
+        .form-container button {
+            padding: 12px 25px;
+            margin: 10px;
+            background-color: #4157FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .option-container button:hover,
+        .form-container button:hover {
+            background-color: #3545d4;
+        }
+
+        .form-container {
+            display: none;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-container input,
+        .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .error {
+            border-color: red;
+        }
+
+        #voltar-button {
+            background-color: #A8C8FF;
+            margin-right: 10px;
+        }
+
+        #voltar-button:hover {
+            background-color: #3545d4;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+
+        .session-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="option-container" id="option-container">
+        <h2>Você deseja criar sua conta como:</h2>
+        <button id="botao-usuario">USUÁRIO</button>
+        <button id="botao-oficina">OFICINA</button>
+        <button id="botao-desmontadora">DESMONTADORA</button>
+        <button id="botao-prestador">PRESTADOR DE SERVIÇO</button>
+    </div>
+
+    <div class="form-container" id="form-container">
+        <h2 id="form-title">Cadastro</h2>
+
+        <?php session_start(); ?>
+        <?php if (isset($_SESSION['mensagem'])): ?>
+            <div class="session-message">
+                <?php echo $_SESSION['mensagem']; ?>
+                <?php unset($_SESSION['mensagem']); ?>
+            </div>
+        <?php endif; ?>
+
+        <form id="form" method="POST" action="cadastro.php" onsubmit="return validateForm()">
+            <div class="error-message" id="error-message">Por favor, preencha todos os campos obrigatórios.</div>
+            <!-- Campos do formulário serão inseridos dinamicamente -->
+        </form>
+        <div class="button-container">
+            <button type="submit" form="form">Cadastrar</button>
+            <button id="voltar-button">Voltar</button>
+        </div>
+    </div>
+
+    <script>
+        const formContainer = document.getElementById('form-container');
+        const form = document.getElementById('form');
+        const formTitle = document.getElementById('form-title');
+        const optionContainer = document.getElementById('option-container');
+        const voltarButton = document.getElementById('voltar-button');
+        const errorMessage = document.getElementById('error-message');
+
+        const optionButtons = document.querySelectorAll('.option-container button');
+
+        optionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                optionContainer.style.display = 'none';
+                formContainer.style.display = 'flex';
+                formContainer.style.transform = 'scale(1.0)';
+                showForm(button.id.replace('botao-', ''));
+            });
+        });
+
+        voltarButton.addEventListener('click', () => {
+            formContainer.style.transform = 'scale(0)';
+            setTimeout(() => {
+                formContainer.style.display = 'none';
+                optionContainer.style.display = 'flex';
+            }, 300);
+        });
+
+        function showForm(type) {
+            form.innerHTML = '';
+            if (type === 'usuario') {
+                formTitle.textContent = 'Cadastro de Usuário';
+                form.innerHTML += `
+                    <input type="text" name="nome_usuario" placeholder="Nome" required>
+                    <input type="text" name="sobrenome_usuario" placeholder="Sobrenome" required>
+                    <input type="email" name="email_usuario" placeholder="E-mail" required>
+                    <input type="text" name="telefone_usuario" placeholder="Telefone" required>
+                    <input type="password" name="senha_usuario" placeholder="Senha" required>
+                    <input type="text" name="cpf_usuario" placeholder="CPF" required>
+                    <input type="text" name="logradouro" placeholder="Logradouro" required>
+                    <input type="text" name="numero" placeholder="Número" required>
+                    <input type="text" name="complemento" placeholder="Complemento">
+                    <input type="text" name="bairro" placeholder="Bairro" required>
+                    <input type="text" name="cidade" placeholder="Cidade" required>
+                    <input type="text" name="estado" placeholder="Estado" required>
+                    <input type="text" name="pais" placeholder="País" required>
+                    <input type="text" name="cep" placeholder="CEP" required>
+                `;
+            } else if (type === 'oficina') {
+                formTitle.textContent = 'Cadastro de Oficina';
+                form.innerHTML += `
+                    <input type="text" name="nome_responsavel_oficina" placeholder="Nome do Responsável" required>
+                    <input type="text" name="cpf_responsavel_oficina" placeholder="CPF do Responsável" required>
+                    <input type="text" name="nome_oficina" placeholder="Nome da Oficina" required>
+                    <input type="email" name="email_oficina" placeholder="E-mail" required>
+                    <input type="text" name="telefone_oficina" placeholder="Telefone" required>
+                    <input type="password" name="senha_oficina" placeholder="Senha" required>
+                    <input type="text" name="cnpj_oficina" placeholder="CNPJ" required>
+                    <input type="text" name="logradouro" placeholder="Logradouro" required>
+                    <input type="text" name="numero" placeholder="Número" required>
+                    <input type="text" name="complemento" placeholder="Complemento">
+                    <input type="text" name="bairro" placeholder="Bairro" required>
+                    <input type="text" name="cidade" placeholder="Cidade" required>
+                    <input type="text" name="estado" placeholder="Estado" required>
+                    <input type="text" name="pais" placeholder="País" required>
+                    <input type="text" name="cep" placeholder="CEP" required>
+                `;
+            } else if (type === 'desmontadora') {
+                formTitle.textContent = 'Cadastro de Desmontadora';
+                form.innerHTML += `
+                    <input type="text" name="nome_responsavel_desmontadora" placeholder="Nome do Responsável" required>
+                    <input type="text" name="cpf_responsavel_desmontadora" placeholder="CPF do Responsável" required>
+                    <input type="text" name="nome_desmontadora" placeholder="Nome da Desmontadora" required>
+                    <input type="email" name="email_desmontadora" placeholder="E-mail" required>
+                    <input type="text" name="telefone_desmontadora" placeholder="Telefone" required>
+                    <input type="password" name="senha_desmontadora" placeholder="Senha" required>
+                    <input type="text" name="cnpj_desmontadora" placeholder="CNPJ" required>
+                    <input type="text" name="logradouro" placeholder="Logradouro" required>
+                    <input type="text" name="numero" placeholder="Número" required>
+                    <input type="text" name="complemento" placeholder="Complemento">
+                    <input type="text" name="bairro" placeholder="Bairro" required>
+                    <input type="text" name="cidade" placeholder="Cidade" required>
+                    <input type="text" name="estado" placeholder="Estado" required>
+                    <input type="text" name="pais" placeholder="País" required>
+                    <input type="text" name="cep" placeholder="CEP" required>
+                `;
+            } else if (type === 'prestador') {
+                formTitle.textContent = 'Cadastro de Prestador de Serviço';
+                form.innerHTML += `
+                    <input type="text" name="nome_responsavel_prestador" placeholder="Nome do Responsável" required>
+                    <input type="text" name="cpf_responsavel_prestador" placeholder="CPF do Responsável" required>
+                    <input type="text" name="nome_prestador" placeholder="Nome do Prestador" required>
+                    <input type="email" name="email_prestador" placeholder="E-mail" required>
+                    <input type="text" name="telefone_prestador" placeholder="Telefone" required>
+                    <input type="password" name="senha_prestador" placeholder="Senha" required>
+                    <input type="text" name="cpf_prestador" placeholder="CPF" required>
+                    <input type="text" name="logradouro" placeholder="Logradouro" required>
+                    <input type="text" name="numero" placeholder="Número" required>
+                    <input type="text" name="complemento" placeholder="Complemento">
+                    <input type="text" name="bairro" placeholder="Bairro" required>
+                    <input type="text" name="cidade" placeholder="Cidade" required>
+                    <input type="text" name="estado" placeholder="Estado" required>
+                    <input type="text" name="pais" placeholder="País" required>
+                    <input type="text" name="cep" placeholder="CEP" required>
+                `;
+            }
+        }
+
+        function validateForm() {
+            const inputs = form.querySelectorAll('input');
+            let isValid = true;
+
+            // Limpa mensagens de erro anteriores
+            errorMessage.style.display = 'none';
+            inputs.forEach(input => {
+                input.classList.remove('error');
+            });
+
+            inputs.forEach(input => {
+                if (!input.value) {
+                    input.classList.add('error');
+                    isValid = false;
+                }
+            });
+
+            if (!isValid) {
+                errorMessage.style.display = 'block';
+            }
+
+            return isValid; // Impede o envio do formulário se não for válido
+        }
+    </script>
+</body>
+
+</html>

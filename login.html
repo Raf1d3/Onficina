@@ -10,47 +10,26 @@
 </head>
 
 <body>
-
     <main>
         <section id="main-login">
             <div class="container-login" id="container-login">
-                <div class="form-container cadastro-container">
-                    <form action="cadastrar.php" method="POST">
-                        <h1>Crie sua conta</h1>
-                        <div class="social-container">
-                            <a href="#" class="social"><img class="fab fa-facebook-f"
-                                    src="assets/img/icon-face-black.png"></a>
-                            <a href="#" class="social"><img class="fab fa-google-plus-g"
-                                    src="assets/img/icon-google-black.png"></a>
-                            <a href="#" class="social"><img class="fab fa-linkedin-in"
-                                    src="assets/img/icon-linkedin-black.png"></a>
-                        </div>
-                        <span>ou use seu email para se cadastrar</span>
-                        <input type="text" name="nome" placeholder="Nome" required />
-                        <input type="email" name="email" placeholder="Email" required />
-                        <input type="password" name="senha" placeholder="Senha" required />
-                        <button type="submit">Cadastrar</button>
-                    </form>
-                </div>
                 <div class="form-container entrar-container">
-                    <form action="login.php" method="POST">
+                    <form action="login.php" method="POST"> <!-- Ação e método do formulário -->
                         <h1>Entrar</h1>
                         <div class="social-container">
-                            <a href="#" class="social"><img class="fab fa-facebook-f"
-                                    src="assets/img/icon-face-black.png"></a>
-                            <a href="#" class="social"><img class="fab fa-google-plus-g"
-                                    src="assets/img/icon-google-black.png"></a>
-                            <a href="#" class="social"><img class="fab fa-linkedin-in"
-                                    src="assets/img/icon-linkedin-black.png"></a>
+                            <a href="#" class="social"><img class="fab fa-facebook-f" src="assets/img/icon-face-black.png"></a>
+                            <a href="#" class="social"><img class="fab fa-google-plus-g" src="assets/img/icon-google-black.png"></a>
+                            <a href="#" class="social"><img class="fab fa-linkedin-in" src="assets/img/icon-linkedin-black.png"></a>
                         </div>
                         <span>Ou use sua conta</span>
-                        <input type="email" name="email" placeholder="Email" id="input-email-login" required />
-                        <input type="password" name="senha" placeholder="Senha" id="input-senha-login" required />
+                        <input type="email" placeholder="Email" id="input-email-login" name="email" required /> <!-- Adicionado o atributo name -->
+                        <input type="password" placeholder="Senha" id="input-senha-login" name="senha" required /> <!-- Adicionado o atributo name -->
                         <div class="error-message" id="error-message" style="display: none;">Email ou senha inválidos</div>
                         <a href="#">Esqueceu sua senha?</a>
-                        <button type="submit" id="bot-entrar">Entrar</button>
+                        <button id="bot-entrar" type="submit">Entrar</button> <!-- Botão de tipo submit -->
                     </form>
                 </div>
+
                 <div class="overlay-container">
                     <div class="overlay">
                         <div class="overlay-panel overlay-left">
@@ -61,7 +40,7 @@
                         <div class="overlay-panel overlay-right">
                             <h1>Bem vindo!</h1>
                             <p>Crie sua conta e comece sua jornada conosco</p>
-                            <button class="ghost" id="trocar-cadastrar">Cadastrar</button>
+                            <button class="ghost" id="botao-cadastrar">Cadastrar</button>
                         </div>
                     </div>
                 </div>
@@ -75,21 +54,15 @@
                     <p>para acessar sua conta:</p>
                     <br>
                     <div class="download-app-mobile">
-                        <a onclick="umami.track('App: Baixar na Google Play');" target="_blank" rel="noreferrer"
-                            href="#" class="btn-aplicativo">
-                            <img loading="lazy" width="32" height="32" alt="Play Store"
-                                src="https://www.sults.com.br/sults/images/icones/rodape/logo_play_store.svg"
-                                style="width: 32px;">
+                        <a onclick="umami.track('App: Baixar na Google Play');" target="_blank" rel="noreferrer" href="#" class="btn-aplicativo">
+                            <img loading="lazy" width="32" height="32" alt="Play Store" src="https://www.sults.com.br/sults/images/icones/rodape/logo_play_store.svg" style="width: 32px;">
                             <div class="app-info">
                                 <span class="app-text">Baixar na</span>
                                 <span class="app-name">Google Play</span>
                             </div>
                         </a>
-                        <a onclick="umami.track('App: Baixar na App Store');" href="#" target="_blank" rel="noreferrer"
-                            class="btn-aplicativo">
-                            <img loading="lazy" width="32" height="32" alt="App Store"
-                                src="https://www.sults.com.br/sults/images/icones/rodape/logo_apple_store.svg"
-                                style="width: 32px;">
+                        <a onclick="umami.track('App: Baixar na App Store');" href="#" target="_blank" rel="noreferrer" class="btn-aplicativo">
+                            <img loading="lazy" width="32" height="32" alt="App Store" src="https://www.sults.com.br/sults/images/icones/rodape/logo_apple_store.svg" style="width: 32px;">
                             <div class="app-info">
                                 <span class="app-text">Baixar na</span>
                                 <span class="app-name">App Store</span>
@@ -102,19 +75,34 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
     <script>
+        // Redirecionar para a página de cadastro
+        const botaoCadastrar = document.getElementById('botao-cadastrar');
+
+        botaoCadastrar.addEventListener('click', () => {
+            // Redireciona para a página de cadastro
+            window.location.href = 'cadastro.html';
+        });
+
+        // Funções originais
         const botTrocarCadastrar = document.getElementById('trocar-cadastrar');
-        const BotTrocarEntrar = document.getElementById('trocar-entrar');
-        const container = document.getElementById('container-login');
-
+        const botTrocarEntrar = document.getElementById('trocar-entrar');
         botTrocarCadastrar.addEventListener('click', () => {
-            container.classList.add("right-panel-active");
+            containerLogin.classList.add("right-panel-active");
         });
 
-        BotTrocarEntrar.addEventListener('click', () => {
-            container.classList.remove("right-panel-active");
+        botTrocarEntrar.addEventListener('click', () => {
+            containerLogin.classList.remove("right-panel-active");
         });
+
+        // Lógica de exibição de mensagens de erro
+        const errorMessage = document.getElementById('error-message');
+
+        // Verifica se há um erro na URL e exibe a mensagem correspondente
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('error')) {
+            errorMessage.style.display = 'block';
+        }
     </script>
 </body>
 

@@ -88,7 +88,7 @@
     </header>
     <div class="container">
         <div class="card">
-            <form action="cadastrar_veiculo.php" method="POST">
+            <form action="cadastrar_veiculo_usuario.php" method="POST">
                 <div class="form-group">
                     <label for="marca">Marca:</label>
                     <input type="text" id="marca" name="marca" required>
@@ -96,6 +96,10 @@
                 <div class="form-group">
                     <label for="modelo">Modelo:</label>
                     <input type="text" id="modelo" name="modelo" required>
+                </div>
+                <div class="form-group">
+                    <label for="cor">Cor:</label>
+                    <input type="text" id="cor" name="cor" required>
                 </div>
                 <div class="form-group">
                     <label for="ano">Ano:</label>
@@ -108,14 +112,18 @@
                 <div class="form-group">
                     <label for="tipo_veiculo">Tipo de Veículo:</label>
                     <select id="tipo_veiculo" name="tipo_veiculo" required>
-                        <option value="Carro">Carro</option>
-                        <option value="Moto">Moto</option>
-                        <option value="Caminhão">Caminhão</option>
-                        <option value="Outro">Outro</option>
+                        <option value="carro">Carro</option>
+                        <option value="moto">Moto</option>
+                        <option value="caminhão">Caminhão</option>
+                        <option value="picape">Picape</option>
+                        <option value="caminhonete">Caminhonete</option>
+                        <option value="van">Van</option>
+                        <option value="ônibus">Ônibus</option>
+                        <option value="outro">Outro</option>
                     </select>
                 </div>
                 <button type="submit" class="btn">Cadastrar</button>
-                <a href="painel-usuario.html" class="cancelar">Cancelar</a>
+                <a href="painel_usuario.php" class="cancelar">Cancelar</a>
             </form>
         </div>
     </div>

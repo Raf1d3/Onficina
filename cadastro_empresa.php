@@ -25,6 +25,7 @@ $endereco = trim($_POST['endereco']);
 $telefone = trim($_POST['telefone']);
 $email_empresa = trim($_POST['email_empresa']);
 $cnpj = trim($_POST['cnpj']);
+$senha_empresa = password_hash(trim($_POST['senha_empresa']), PASSWORD_DEFAULT); // Criptografar a senha
 
 // Validações (descomentadas quando necessário)
 // if (!validarCPF($cpf_responsavel)) {
@@ -45,20 +46,20 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    echo "<script>alert('E-mail da empresa já cadastrado!'); window.location.href='cadastro_profissional.html';</script>";
+    echo "<script>alert('E-mail da empresa já cadastrado!'); window.location.href='cadastro_empresa.php';</script>";
 } else {
     // Inserir dados no banco de dados
-    $sql = "INSERT INTO empresas (nome_empresa, endereco, telefone, email_empresa, cnpj, nome_responsavel, cpf_responsavel) 
-            VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO empresas (nome_empresa, endereco, telefone, email_empresa, cnpj, senha_empresa, nome_responsavel, cpf_responsavel) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sssssss', $nome_empresa, $endereco, $telefone, $email_empresa, $cnpj, $nome_responsavel, $cpf_responsavel);
+    $stmt->bind_param('ssssssss', $nome_empresa, $endereco, $telefone, $email_empresa, $cnpj, $senha_empresa, $nome_responsavel, $cpf_responsavel);
 
     if ($stmt->execute()) {
         // Exibir mensagem de sucesso e redirecionar
         echo "<script>alert('Empresa cadastrada com sucesso!'); window.location.href='login.html';</script>";
         exit;
     } else {
-        echo "<script>alert('Erro ao cadastrar a empresa: " . $stmt->error . "'); window.location.href='cadastro_profissional.html';</script>";
+        echo "<script>alert('Erro ao cadastrar a empresa: " . $stmt->error . "'); window.location.href='cadastro_empresa.php';</script>";
     }
 }
 
