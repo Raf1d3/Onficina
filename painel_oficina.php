@@ -46,7 +46,9 @@ if ($result_pecas->num_rows > 0) {
     while ($row = $result_pecas->fetch_assoc()) {
         $pecas_html .= "<li>Nome: " . htmlspecialchars($row['nome_peca']) . "</li>";
         $pecas_html .= "<li>Valor: R$ " . htmlspecialchars($row['valor']) . "</li>";
-        $pecas_html .= "<li>Estoque: " . htmlspecialchars($row['estoque']) . "</li>";
+        // Verifica se a coluna "estoque" existe e se não for nula
+        $estoque = isset($row['estoque']) ? htmlspecialchars($row['estoque']) : 'Indisponível';
+        $pecas_html .= "<li>Estoque: " . $estoque . "</li>";
         $pecas_html .= "<br>";
     }
 } else {

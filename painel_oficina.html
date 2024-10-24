@@ -3,7 +3,7 @@
 <head>
     <link rel="icon" href="assets/img/icon_Onficina.png">
     <meta charset="UTF-8">
-    <title>Painel da Empresa - ONFICINA</title>
+    <title>Painel da Oficina - ONFICINA</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -83,15 +83,15 @@
     <header>
         <div class="profile">
             <img src="assets/img/img-user.png" alt="Foto do Perfil">
-            <span><?php echo htmlspecialchars($nome_empresa); ?></span> <!-- Nome da empresa logada -->
+            <span><?php echo htmlspecialchars($nome_oficina); ?></span> <!-- Nome da oficina logada -->
         </div>
-        <form method="POST" action="painel_empresa.php" style="display: inline;"> <!-- Formulário para logout -->
+        <form method="POST" action="painel_oficina.php" style="display: inline;"> <!-- Formulário para logout -->
             <button type="submit" name="logout" class="logout">Sair</button> <!-- Botão de logout -->
         </form>
     </header>
     <div class="container">
         <a href="cadastrar_peca.html" class="cadastrar">Cadastrar Peça</a>
-        <a href="cadastrar_servico.html" class="cadastrar">Cadastrar Serviço</a>
+        <a href="cadastrar_servico_oficina.html" class="cadastrar">Cadastrar Serviço</a>
         <div class="card">
             <h2>Peças Cadastradas:</h2>
             <ul id="lista-pecas">

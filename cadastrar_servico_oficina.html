@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/icon_Onficina.png">
+    <title>Cadastrar Serviço - ONFICINA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            padding: 12px 25px;
+            margin: 10px;
+            background-color: #4157FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .form-container button:hover {
+            background-color: #3545d4;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Cadastrar Serviço</h2>
+        <form method="POST" action="cadastrar_servico_oficina.php">
+            <input type="text" name="nome_servico" placeholder="Nome do Serviço" required>
+            <input type="number" name="valor_minimo" placeholder="Valor Mínimo (R$)" required step="0.01">
+            <input type="number" name="valor_maximo" placeholder="Valor Máximo (R$)" required step="0.01">
+            <input type="number" name="tempo_minimo" placeholder="Tempo Mínimo (Horas)" required>
+            <input type="number" name="tempo_maximo" placeholder="Tempo Máximo (Horas)" required>
+            <textarea name="descricao" placeholder="Descrição" required></textarea>
+            <input type="text" name="categoria" placeholder="Categoria" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
