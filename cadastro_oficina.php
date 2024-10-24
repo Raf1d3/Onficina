@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cep = $_POST['cep'];
 
         if ($stmt->execute()) {
-            $_SESSION['mensagem'] = "Cadastro realizado com sucesso!";
+            $_SESSION['mensagem'] = "";
             header("Location: login.html");
             exit();
         } else {
