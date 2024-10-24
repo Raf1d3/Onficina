@@ -88,7 +88,7 @@
     </header>
     <div class="container">
         <div class="card">
-            <form action="cadastrar_veiculo_usuario.php" method="POST">
+            <form id="formVeiculo">
                 <div class="form-group">
                     <label for="marca">Marca:</label>
                     <input type="text" id="marca" name="marca" required>
@@ -127,6 +127,29 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('formVeiculo').addEventListener('submit', function (e) {
+            e.preventDefault(); // Impede o envio do formulário padrão
+
+            var formData = new FormData(this); // Captura os dados do formulário
+
+            fetch('cadastrar_veiculo_usuario.php', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.message);
+                    window.location.href = 'painel_usuario.php'; // Redireciona após o sucesso
+                } else {
+                    alert(data.message); // Mostra mensagem de erro
+                }
+            })
+            .catch(error => console.error('Erro:', error));
+        });
+    </script>
 </body>
 
 </html>

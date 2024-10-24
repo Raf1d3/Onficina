@@ -14,8 +14,7 @@
             padding: 0;
         }
 
-        .option-container,
-        .form-container {
+        .option-container {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -26,15 +25,13 @@
             width: 90%;
             max-width: 500px;
             margin: 50px auto;
-            transition: transform 0.3s ease-in-out;
         }
 
         .option-container h2 {
             margin-bottom: 30px;
         }
 
-        .option-container button,
-        .form-container button {
+        .option-container button {
             padding: 12px 25px;
             margin: 10px;
             background-color: #4157FF;
@@ -47,59 +44,8 @@
             transition: background-color 0.3s ease;
         }
 
-        .option-container button:hover,
-        .form-container button:hover {
+        .option-container button:hover {
             background-color: #3545d4;
-        }
-
-        .form-container {
-            display: none;
-            width: 100%;
-        }
-
-        .form-container h2 {
-            margin-bottom: 20px;
-        }
-
-        .form-container input,
-        .form-container select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .error {
-            border-color: red;
-        }
-
-        #voltar-button {
-            background-color: #A8C8FF;
-            margin-right: 10px;
-        }
-
-        #voltar-button:hover {
-            background-color: #3545d4;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .error-message {
-            color: red;
-            font-size: 14px;
-            display: none;
-            margin: 10px 0;
-        }
-
-        .session-message {
-            color: red;
-            font-size: 14px;
-            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -113,167 +59,30 @@
         <button id="botao-prestador" aria-label="Cadastrar como Prestador de Serviço">PRESTADOR DE SERVIÇO</button>
     </div>
 
-    <div class="form-container" id="form-container">
-        <h2 id="form-title">Cadastro</h2>
-
-        <?php session_start(); ?>
-        <?php if (isset($_SESSION['mensagem'])): ?>
-            <div class="session-message">
-                <?php echo $_SESSION['mensagem']; ?>
-                <?php unset($_SESSION['mensagem']); ?>
-            </div>
-        <?php endif; ?>
-
-        <form id="form" method="POST" action="cadastro.php" onsubmit="return validateForm()">
-            <div class="error-message" id="error-message">Por favor, preencha todos os campos obrigatórios.</div>
-            <!-- Campos do formulário serão inseridos dinamicamente -->
-        </form>
-        <div class="button-container">
-            <button type="submit" form="form">Cadastrar</button>
-            <button id="voltar-button" type="button">Voltar</button>
-        </div>
-    </div>
-
     <script>
-        const formContainer = document.getElementById('form-container');
-        const form = document.getElementById('form');
-        const formTitle = document.getElementById('form-title');
-        const optionContainer = document.getElementById('option-container');
-        const voltarButton = document.getElementById('voltar-button');
-        const errorMessage = document.getElementById('error-message');
-
         const optionButtons = document.querySelectorAll('.option-container button');
 
         optionButtons.forEach(button => {
             button.addEventListener('click', () => {
-                optionContainer.style.display = 'none';
-                formContainer.style.display = 'flex';
-                formContainer.style.transform = 'scale(1.0)';
-                showForm(button.id.replace('botao-', ''));
-            });
-        });
-
-        voltarButton.addEventListener('click', () => {
-            formContainer.style.transform = 'scale(0)';
-            setTimeout(() => {
-                formContainer.style.display = 'none';
-                optionContainer.style.display = 'flex';
-            }, 300);
-        });
-
-        function showForm(type) {
-            form.innerHTML = ''; // Limpa os campos anteriores
-            errorMessage.style.display = 'none'; // Limpa mensagens de erro anteriores
-
-            // Campos específicos para cada tipo de usuário
-            if (type === 'usuario') {
-                formTitle.textContent = 'Cadastro de Usuário';
-                form.innerHTML += `
-                    <input type="text" name="nome_usuario" placeholder="Nome" required aria-label="Nome">
-                    <input type="text" name="sobrenome_usuario" placeholder="Sobrenome" required aria-label="Sobrenome">
-                    <input type="email" name="email_usuario" placeholder="Email" required aria-label="Email">
-                    <input type="text" name="telefone_usuario" placeholder="Telefone" required aria-label="Telefone">
-                    <input type="password" name="senha_usuario" placeholder="Senha" required aria-label="Senha">
-                    <input type="text" name="cpf_usuario" placeholder="CPF" required aria-label="CPF">
-                `;
-            } else if (type === 'oficina') {
-                formTitle.textContent = 'Cadastro de Oficina';
-                form.innerHTML += `
-                    <input type="text" name="nome_responsavel_oficina" placeholder="Nome do Responsável" required aria-label="Nome do Responsável">
-                    <input type="text" name="cpf_responsavel_oficina" placeholder="CPF do Responsável" required aria-label="CPF do Responsável">
-                    <input type="text" name="nome_oficina" placeholder="Nome da Oficina" required aria-label="Nome da Oficina">
-                    <input type="email" name="email_oficina" placeholder="Email" required aria-label="Email">
-                    <input type="text" name="telefone_oficina" placeholder="Telefone" required aria-label="Telefone">
-                    <input type="password" name="senha_oficina" placeholder="Senha" required aria-label="Senha">
-                    <input type="text" name="cnpj_oficina" placeholder="CNPJ" required aria-label="CNPJ">
-                `;
-            } else if (type === 'desmontadora') {
-                formTitle.textContent = 'Cadastro de Desmontadora';
-                form.innerHTML += `
-                    <input type="text" name="nome_responsavel_desmontadora" placeholder="Nome do Responsável" required aria-label="Nome do Responsável">
-                    <input type="text" name="cpf_responsavel_desmontadora" placeholder="CPF do Responsável" required aria-label="CPF do Responsável">
-                    <input type="text" name="nome_desmontadora" placeholder="Nome da Desmontadora" required aria-label="Nome da Desmontadora">
-                    <input type="email" name="email_desmontadora" placeholder="Email" required aria-label="Email">
-                    <input type="text" name="telefone_desmontadora" placeholder="Telefone" required aria-label="Telefone">
-                    <input type="password" name="senha_desmontadora" placeholder="Senha" required aria-label="Senha">
-                    <input type="text" name="cnpj_desmontadora" placeholder="CNPJ" required aria-label="CNPJ">
-                `;
-            } else if (type === 'prestador') {
-                formTitle.textContent = 'Cadastro de Prestador de Serviço';
-                form.innerHTML += `
-                    <input type="text" name="nome_prestador" placeholder="Nome" required aria-label="Nome">
-                    <input type="text" name="sobrenome_prestador" placeholder="Sobrenome" required aria-label="Sobrenome">
-                    <input type="email" name="email_prestador" placeholder="Email" required aria-label="Email">
-                    <input type="text" name="telefone_prestador" placeholder="Telefone" required aria-label="Telefone">
-                    <input type="password" name="senha_prestador" placeholder="Senha" required aria-label="Senha">
-                    <input type="text" name="cpf_prestador" placeholder="CPF" required aria-label="CPF">
-                    <input type="text" name="cnpj_prestador" placeholder="CNPJ (Opcional)" aria-label="CNPJ (Opcional)">
-                `;
-            }
-
-            // Campos de endereço comuns a todos os tipos
-            form.innerHTML += `
-                <h3>Endereço</h3>
-                <input type="text" name="logradouro" placeholder="Logradouro" required aria-label="Logradouro">
-                <input type="text" name="numero" placeholder="Número" required aria-label="Número">
-                <input type="text" name="complemento" placeholder="Complemento (Opcional)" aria-label="Complemento (Opcional)">
-                <input type="text" name="bairro" placeholder="Bairro" required aria-label="Bairro">
-                <input type="text" name="cidade" placeholder="Cidade" required aria-label="Cidade">
-                <select name="estado" required aria-label="Estado">
-                    <option value="" disabled selected>Selecione o Estado</option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-                </select>
-                <input type="text" name="pais" placeholder="País" value="Brasil" required aria-label="País">
-                <input type="text" name="cep" placeholder="CEP" required aria-label="CEP">
-            `;
-        }
-
-        function validateForm() {
-            const inputs = form.querySelectorAll('input, select');
-            let isValid = true;
-            errorMessage.style.display = 'none'; // Ocultar a mensagem de erro
-
-            inputs.forEach(input => {
-                if (!input.value && input.required) {
-                    input.classList.add('error');
-                    isValid = false;
-                } else {
-                    input.classList.remove('error');
+                const tipo = button.id.replace('botao-', ''); // Define o valor do tipo
+                switch (tipo) {
+                    case 'usuario':
+                        window.location.href = 'cadastro_usuario.php'; // Redireciona para a página de cadastro de usuário
+                        break;
+                    case 'oficina':
+                        window.location.href = 'cadastro_oficina.php'; // Redireciona para a página de cadastro de oficina
+                        break;
+                    case 'desmontadora':
+                        window.location.href = 'cadastro_desmontadora.php'; // Redireciona para a página de cadastro de desmontadora
+                        break;
+                    case 'prestador':
+                        window.location.href = 'cadastro_prestador.php'; // Redireciona para a página de cadastro de prestador
+                        break;
+                    default:
+                        break;
                 }
             });
-
-            if (!isValid) {
-                errorMessage.style.display = 'block'; // Exibir a mensagem de erro
-            }
-
-            return isValid; // Retornar false se não for válido para impedir o envio do formulário
-        }
+        });
     </script>
 </body>
 

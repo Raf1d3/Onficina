@@ -59,7 +59,7 @@
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            cursor: pointer; /* Altera o cursor para indicar que é um botão */
+            cursor: pointer;
         }
         .logout:hover {
             background-color: #c82333;
@@ -81,40 +81,18 @@
 </head>
 <body>
     <header>
-        <div class="profile">
-            <img src="assets/img/img-user.png" alt="Foto do Perfil">
-            <span><?php echo htmlspecialchars($nome_oficina); ?></span> <!-- Nome da oficina logada -->
-        </div>
-        <form method="POST" action="painel_oficina.php" style="display: inline;"> <!-- Formulário para logout -->
-            <button type="submit" name="logout" class="logout">Sair</button> <!-- Botão de logout -->
+        <h1>Bem-vindo, <?php echo htmlspecialchars($nome_usuario); ?>!</h1>
+        <form method="POST" action="">
+            <button class="logout" name="logout">Sair</button>
         </form>
     </header>
     <div class="container">
-        <a href="cadastrar_peca.html" class="cadastrar">Cadastrar Peça</a>
-        <a href="cadastrar_servico.html" class="cadastrar">Cadastrar Serviço</a>
         <div class="card">
-            <h2>Peças Cadastradas:</h2>
-            <ul id="lista-pecas">
-                <?php 
-                if (!empty($pecas_html)) {
-                    echo $pecas_html; 
-                } else {
-                    echo "<li>Nenhuma peça cadastrada.</li>"; // Mensagem se não houver peças
-                }
-                ?>
+            <h2>Meus Veículos</h2>
+            <ul>
+                <?php echo $veiculos_html; ?>
             </ul>
-        </div>
-        <div class="card">
-            <h2>Serviços Cadastrados:</h2>
-            <ul id="lista-servicos">
-                <?php 
-                if (!empty($servicos_html)) {
-                    echo $servicos_html; 
-                } else {
-                    echo "<li>Nenhum serviço cadastrado.</li>"; // Mensagem se não houver serviços
-                }
-                ?>
-            </ul>
+            <a href="cadastrar_veiculo_usuario.html" class="cadastrar">Cadastrar Novo Veículo</a>
         </div>
     </div>
 </body>

@@ -33,13 +33,12 @@ if (empty($email) || empty($senha)) {
         // Verifica se encontrou na tabela de usuários
         if ($result->num_rows > 0) {
             $usuario = $result->fetch_assoc();
-
             // Verifica a senha
             if (password_verify($senha, $usuario['senha'])) {
-                // Login bem-sucedido, cria a sessão e redireciona para o painel de usuário
+                // Login bem-sucedido
                 $_SESSION['id'] = $usuario['id'];
                 $_SESSION['tipo'] = $usuario['tipo'];
-                $_SESSION['nome'] = $usuario['nome']; // Adicione esta linha
+                $_SESSION['nome'] = $usuario['nome'];
                 header("Location: painel_usuario.php");
                 exit();
             } else {
@@ -49,72 +48,63 @@ if (empty($email) || empty($senha)) {
             // Tenta encontrar o prestador na tabela de prestadores
             $query = "SELECT 'prestador' AS tipo, id, nome_prestador AS nome, senha_prestador AS senha FROM prestadores WHERE email_prestador = ?";
             $stmt = $mysqli->prepare($query);
-            
             if ($stmt) {
                 $stmt->bind_param("s", $email);
                 $stmt->execute();
                 $result = $stmt->get_result();
-
                 // Verifica se encontrou na tabela de prestadores
                 if ($result->num_rows > 0) {
                     $prestador = $result->fetch_assoc();
-
                     // Verifica a senha
                     if (password_verify($senha, $prestador['senha'])) {
-                        // Login bem-sucedido, cria a sessão e redireciona para o painel de prestador
+                        // Login bem-sucedido
                         $_SESSION['id'] = $prestador['id'];
                         $_SESSION['tipo'] = $prestador['tipo'];
-                        $_SESSION['nome'] = $prestador['nome']; // Adicione esta linha
+                        $_SESSION['nome'] = $prestador['nome'];
                         header("Location: painel_prestador.php");
                         exit();
                     } else {
                         $erro = "Senha incorreta para prestador!";
                     }
                 } else {
-                    // Tenta encontrar a oficina na tabela de oficinas
-                    $query = "SELECT 'oficina' AS tipo, id AS id, nome_oficina AS nome, senha_oficina AS senha FROM oficinas WHERE email_oficina = ?";
+                    // Tenta encontrar a oficina
+                    $query = "SELECT 'oficina' AS tipo, id, nome_oficina AS nome, senha_oficina AS senha FROM oficinas WHERE email_oficina = ?";
                     $stmt = $mysqli->prepare($query);
-
                     if ($stmt) {
                         $stmt->bind_param("s", $email);
                         $stmt->execute();
                         $result = $stmt->get_result();
-
                         // Verifica se encontrou na tabela de oficinas
                         if ($result->num_rows > 0) {
                             $oficina = $result->fetch_assoc();
-
                             // Verifica a senha
                             if (password_verify($senha, $oficina['senha'])) {
-                                // Login bem-sucedido, cria a sessão e redireciona para o painel de oficina
+                                // Login bem-sucedido
                                 $_SESSION['id'] = $oficina['id'];
                                 $_SESSION['tipo'] = $oficina['tipo'];
-                                $_SESSION['nome'] = $oficina['nome']; // Adicione esta linha
+                                $_SESSION['nome'] = $oficina['nome'];
                                 header("Location: painel_oficina.php");
                                 exit();
                             } else {
                                 $erro = "Senha incorreta para oficina!";
                             }
                         } else {
-                            // Tenta encontrar a desmontadora na tabela de desmontadoras
+                            // Tenta encontrar a desmontadora
                             $query = "SELECT 'desmontadora' AS tipo, id, nome_desmontadora AS nome, senha_desmontadora AS senha FROM desmontadoras WHERE email_desmontadora = ?";
                             $stmt = $mysqli->prepare($query);
-
                             if ($stmt) {
                                 $stmt->bind_param("s", $email);
                                 $stmt->execute();
                                 $result = $stmt->get_result();
-
                                 // Verifica se encontrou na tabela de desmontadoras
                                 if ($result->num_rows > 0) {
                                     $desmontadora = $result->fetch_assoc();
-
                                     // Verifica a senha
                                     if (password_verify($senha, $desmontadora['senha'])) {
-                                        // Login bem-sucedido, cria a sessão e redireciona para o painel de desmontadora
+                                        // Login bem-sucedido
                                         $_SESSION['id'] = $desmontadora['id'];
                                         $_SESSION['tipo'] = $desmontadora['tipo'];
-                                        $_SESSION['nome'] = $desmontadora['nome']; // Adicione esta linha
+                                        $_SESSION['nome'] = $desmontadora['nome'];
                                         header("Location: painel_desmontadora.php");
                                         exit();
                                     } else {
