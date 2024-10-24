@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -17,28 +17,28 @@
                     <form action="login.php" method="POST"> <!-- Ação e método do formulário -->
                         <h1>Entrar</h1>
                         <div class="social-container">
-                            <a href="#" class="social"><img class="fab fa-facebook-f" src="assets/img/icon-face-black.png"></a>
-                            <a href="#" class="social"><img class="fab fa-google-plus-g" src="assets/img/icon-google-black.png"></a>
-                            <a href="#" class="social"><img class="fab fa-linkedin-in" src="assets/img/icon-linkedin-black.png"></a>
+                            <a href="#" class="social"><img class="fab fa-facebook-f" src="assets/img/icon-face-black.png" alt="Facebook"></a>
+                            <a href="#" class="social"><img class="fab fa-google-plus-g" src="assets/img/icon-google-black.png" alt="Google"></a>
+                            <a href="#" class="social"><img class="fab fa-linkedin-in" src="assets/img/icon-linkedin-black.png" alt="LinkedIn"></a>
                         </div>
                         <span>Ou use sua conta</span>
-                        <input type="email" placeholder="Email" id="input-email-login" name="email" required /> <!-- Adicionado o atributo name -->
-                        <input type="password" placeholder="Senha" id="input-senha-login" name="senha" required /> <!-- Adicionado o atributo name -->
-                        <div class="error-message" id="error-message" style="display: none;">Email ou senha inválidos</div>
+                        <input type="email" placeholder="Email" id="input-email-login" name="email" required />
+                        <input type="password" placeholder="Senha" id="input-senha-login" name="senha" required />
+                        <div class="error-message" id="error-message" style="display: none;" role="alert">Email ou senha inválidos</div>
                         <a href="#">Esqueceu sua senha?</a>
-                        <button id="bot-entrar" type="submit">Entrar</button> <!-- Botão de tipo submit -->
+                        <button id="bot-entrar" type="submit">Entrar</button>
                     </form>
                 </div>
 
                 <div class="overlay-container">
                     <div class="overlay">
                         <div class="overlay-panel overlay-left">
-                            <h1>Bem vindo de volta!</h1>
-                            <p>Faça o login, para se manter conectado</p>
+                            <h1>Bem-vindo de volta!</h1>
+                            <p>Faça o login para se manter conectado</p>
                             <button class="ghost" id="trocar-entrar">Entrar</button>
                         </div>
                         <div class="overlay-panel overlay-right">
-                            <h1>Bem vindo!</h1>
+                            <h1>Bem-vindo!</h1>
                             <p>Crie sua conta e comece sua jornada conosco</p>
                             <button class="ghost" id="botao-cadastrar">Cadastrar</button>
                         </div>
@@ -70,7 +70,7 @@
                         </a>
                     </div>
                 </div>
-                <img class="dispositivo" src="assets/img/cel.png" alt="">
+                <img class="dispositivo" src="assets/img/cel.png" alt="Dispositivo Móvel">
             </div>
         </section>
     </main>
@@ -80,16 +80,18 @@
         const botaoCadastrar = document.getElementById('botao-cadastrar');
 
         botaoCadastrar.addEventListener('click', () => {
-            // Redireciona para a página de cadastro
             window.location.href = 'cadastro.html';
         });
 
         // Funções originais
         const botTrocarCadastrar = document.getElementById('trocar-cadastrar');
         const botTrocarEntrar = document.getElementById('trocar-entrar');
-        botTrocarCadastrar.addEventListener('click', () => {
-            containerLogin.classList.add("right-panel-active");
-        });
+        
+        if (botTrocarCadastrar) {
+            botTrocarCadastrar.addEventListener('click', () => {
+                containerLogin.classList.add("right-panel-active");
+            });
+        }
 
         botTrocarEntrar.addEventListener('click', () => {
             containerLogin.classList.remove("right-panel-active");

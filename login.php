@@ -47,7 +47,7 @@ if (empty($email) || empty($senha)) {
             }
         } else {
             // Tenta encontrar o prestador na tabela de prestadores
-            $query = "SELECT 'prestador' AS tipo, id, nome_prestador AS nome, senha_prestador AS senha FROM prestadores_servicos WHERE email_prestador = ?";
+            $query = "SELECT 'prestador' AS tipo, id, nome_prestador AS nome, senha_prestador AS senha FROM prestadores WHERE email_prestador = ?";
             $stmt = $mysqli->prepare($query);
             
             if ($stmt) {

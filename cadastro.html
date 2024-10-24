@@ -22,8 +22,7 @@
             padding: 40px;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-                0 10px 10px rgba(0, 0, 0, 0.22);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             width: 90%;
             max-width: 500px;
             margin: 50px auto;
@@ -94,6 +93,7 @@
             color: red;
             font-size: 14px;
             display: none;
+            margin: 10px 0;
         }
 
         .session-message {
@@ -107,10 +107,10 @@
 <body>
     <div class="option-container" id="option-container">
         <h2>Você deseja criar sua conta como:</h2>
-        <button id="botao-usuario">USUÁRIO</button>
-        <button id="botao-oficina">OFICINA</button>
-        <button id="botao-desmontadora">DESMONTADORA</button>
-        <button id="botao-prestador">PRESTADOR DE SERVIÇO</button>
+        <button id="botao-usuario" aria-label="Cadastrar como Usuário">USUÁRIO</button>
+        <button id="botao-oficina" aria-label="Cadastrar como Oficina">OFICINA</button>
+        <button id="botao-desmontadora" aria-label="Cadastrar como Desmontadora">DESMONTADORA</button>
+        <button id="botao-prestador" aria-label="Cadastrar como Prestador de Serviço">PRESTADOR DE SERVIÇO</button>
     </div>
 
     <div class="form-container" id="form-container">
@@ -130,7 +130,7 @@
         </form>
         <div class="button-container">
             <button type="submit" form="form">Cadastrar</button>
-            <button id="voltar-button">Voltar</button>
+            <button id="voltar-button" type="button">Voltar</button>
         </div>
     </div>
 
@@ -162,107 +162,117 @@
         });
 
         function showForm(type) {
-            form.innerHTML = '';
+            form.innerHTML = ''; // Limpa os campos anteriores
+            errorMessage.style.display = 'none'; // Limpa mensagens de erro anteriores
+
+            // Campos específicos para cada tipo de usuário
             if (type === 'usuario') {
                 formTitle.textContent = 'Cadastro de Usuário';
                 form.innerHTML += `
-                    <input type="text" name="nome_usuario" placeholder="Nome" required>
-                    <input type="text" name="sobrenome_usuario" placeholder="Sobrenome" required>
-                    <input type="email" name="email_usuario" placeholder="E-mail" required>
-                    <input type="text" name="telefone_usuario" placeholder="Telefone" required>
-                    <input type="password" name="senha_usuario" placeholder="Senha" required>
-                    <input type="text" name="cpf_usuario" placeholder="CPF" required>
-                    <input type="text" name="logradouro" placeholder="Logradouro" required>
-                    <input type="text" name="numero" placeholder="Número" required>
-                    <input type="text" name="complemento" placeholder="Complemento">
-                    <input type="text" name="bairro" placeholder="Bairro" required>
-                    <input type="text" name="cidade" placeholder="Cidade" required>
-                    <input type="text" name="estado" placeholder="Estado" required>
-                    <input type="text" name="pais" placeholder="País" required>
-                    <input type="text" name="cep" placeholder="CEP" required>
+                    <input type="text" name="nome_usuario" placeholder="Nome" required aria-label="Nome">
+                    <input type="text" name="sobrenome_usuario" placeholder="Sobrenome" required aria-label="Sobrenome">
+                    <input type="email" name="email_usuario" placeholder="Email" required aria-label="Email">
+                    <input type="text" name="telefone_usuario" placeholder="Telefone" required aria-label="Telefone">
+                    <input type="password" name="senha_usuario" placeholder="Senha" required aria-label="Senha">
+                    <input type="text" name="cpf_usuario" placeholder="CPF" required aria-label="CPF">
                 `;
             } else if (type === 'oficina') {
                 formTitle.textContent = 'Cadastro de Oficina';
                 form.innerHTML += `
-                    <input type="text" name="nome_responsavel_oficina" placeholder="Nome do Responsável" required>
-                    <input type="text" name="cpf_responsavel_oficina" placeholder="CPF do Responsável" required>
-                    <input type="text" name="nome_oficina" placeholder="Nome da Oficina" required>
-                    <input type="email" name="email_oficina" placeholder="E-mail" required>
-                    <input type="text" name="telefone_oficina" placeholder="Telefone" required>
-                    <input type="password" name="senha_oficina" placeholder="Senha" required>
-                    <input type="text" name="cnpj_oficina" placeholder="CNPJ" required>
-                    <input type="text" name="logradouro" placeholder="Logradouro" required>
-                    <input type="text" name="numero" placeholder="Número" required>
-                    <input type="text" name="complemento" placeholder="Complemento">
-                    <input type="text" name="bairro" placeholder="Bairro" required>
-                    <input type="text" name="cidade" placeholder="Cidade" required>
-                    <input type="text" name="estado" placeholder="Estado" required>
-                    <input type="text" name="pais" placeholder="País" required>
-                    <input type="text" name="cep" placeholder="CEP" required>
+                    <input type="text" name="nome_responsavel_oficina" placeholder="Nome do Responsável" required aria-label="Nome do Responsável">
+                    <input type="text" name="cpf_responsavel_oficina" placeholder="CPF do Responsável" required aria-label="CPF do Responsável">
+                    <input type="text" name="nome_oficina" placeholder="Nome da Oficina" required aria-label="Nome da Oficina">
+                    <input type="email" name="email_oficina" placeholder="Email" required aria-label="Email">
+                    <input type="text" name="telefone_oficina" placeholder="Telefone" required aria-label="Telefone">
+                    <input type="password" name="senha_oficina" placeholder="Senha" required aria-label="Senha">
+                    <input type="text" name="cnpj_oficina" placeholder="CNPJ" required aria-label="CNPJ">
                 `;
             } else if (type === 'desmontadora') {
                 formTitle.textContent = 'Cadastro de Desmontadora';
                 form.innerHTML += `
-                    <input type="text" name="nome_responsavel_desmontadora" placeholder="Nome do Responsável" required>
-                    <input type="text" name="cpf_responsavel_desmontadora" placeholder="CPF do Responsável" required>
-                    <input type="text" name="nome_desmontadora" placeholder="Nome da Desmontadora" required>
-                    <input type="email" name="email_desmontadora" placeholder="E-mail" required>
-                    <input type="text" name="telefone_desmontadora" placeholder="Telefone" required>
-                    <input type="password" name="senha_desmontadora" placeholder="Senha" required>
-                    <input type="text" name="cnpj_desmontadora" placeholder="CNPJ" required>
-                    <input type="text" name="logradouro" placeholder="Logradouro" required>
-                    <input type="text" name="numero" placeholder="Número" required>
-                    <input type="text" name="complemento" placeholder="Complemento">
-                    <input type="text" name="bairro" placeholder="Bairro" required>
-                    <input type="text" name="cidade" placeholder="Cidade" required>
-                    <input type="text" name="estado" placeholder="Estado" required>
-                    <input type="text" name="pais" placeholder="País" required>
-                    <input type="text" name="cep" placeholder="CEP" required>
+                    <input type="text" name="nome_responsavel_desmontadora" placeholder="Nome do Responsável" required aria-label="Nome do Responsável">
+                    <input type="text" name="cpf_responsavel_desmontadora" placeholder="CPF do Responsável" required aria-label="CPF do Responsável">
+                    <input type="text" name="nome_desmontadora" placeholder="Nome da Desmontadora" required aria-label="Nome da Desmontadora">
+                    <input type="email" name="email_desmontadora" placeholder="Email" required aria-label="Email">
+                    <input type="text" name="telefone_desmontadora" placeholder="Telefone" required aria-label="Telefone">
+                    <input type="password" name="senha_desmontadora" placeholder="Senha" required aria-label="Senha">
+                    <input type="text" name="cnpj_desmontadora" placeholder="CNPJ" required aria-label="CNPJ">
                 `;
             } else if (type === 'prestador') {
                 formTitle.textContent = 'Cadastro de Prestador de Serviço';
                 form.innerHTML += `
-                    <input type="text" name="nome_responsavel_prestador" placeholder="Nome do Responsável" required>
-                    <input type="text" name="cpf_responsavel_prestador" placeholder="CPF do Responsável" required>
-                    <input type="text" name="nome_prestador" placeholder="Nome do Prestador" required>
-                    <input type="email" name="email_prestador" placeholder="E-mail" required>
-                    <input type="text" name="telefone_prestador" placeholder="Telefone" required>
-                    <input type="password" name="senha_prestador" placeholder="Senha" required>
-                    <input type="text" name="cpf_prestador" placeholder="CPF" required>
-                    <input type="text" name="logradouro" placeholder="Logradouro" required>
-                    <input type="text" name="numero" placeholder="Número" required>
-                    <input type="text" name="complemento" placeholder="Complemento">
-                    <input type="text" name="bairro" placeholder="Bairro" required>
-                    <input type="text" name="cidade" placeholder="Cidade" required>
-                    <input type="text" name="estado" placeholder="Estado" required>
-                    <input type="text" name="pais" placeholder="País" required>
-                    <input type="text" name="cep" placeholder="CEP" required>
+                    <input type="text" name="nome_prestador" placeholder="Nome" required aria-label="Nome">
+                    <input type="text" name="sobrenome_prestador" placeholder="Sobrenome" required aria-label="Sobrenome">
+                    <input type="email" name="email_prestador" placeholder="Email" required aria-label="Email">
+                    <input type="text" name="telefone_prestador" placeholder="Telefone" required aria-label="Telefone">
+                    <input type="password" name="senha_prestador" placeholder="Senha" required aria-label="Senha">
+                    <input type="text" name="cpf_prestador" placeholder="CPF" required aria-label="CPF">
+                    <input type="text" name="cnpj_prestador" placeholder="CNPJ (Opcional)" aria-label="CNPJ (Opcional)">
                 `;
             }
+
+            // Campos de endereço comuns a todos os tipos
+            form.innerHTML += `
+                <h3>Endereço</h3>
+                <input type="text" name="logradouro" placeholder="Logradouro" required aria-label="Logradouro">
+                <input type="text" name="numero" placeholder="Número" required aria-label="Número">
+                <input type="text" name="complemento" placeholder="Complemento (Opcional)" aria-label="Complemento (Opcional)">
+                <input type="text" name="bairro" placeholder="Bairro" required aria-label="Bairro">
+                <input type="text" name="cidade" placeholder="Cidade" required aria-label="Cidade">
+                <select name="estado" required aria-label="Estado">
+                    <option value="" disabled selected>Selecione o Estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+                <input type="text" name="pais" placeholder="País" value="Brasil" required aria-label="País">
+                <input type="text" name="cep" placeholder="CEP" required aria-label="CEP">
+            `;
         }
 
         function validateForm() {
-            const inputs = form.querySelectorAll('input');
+            const inputs = form.querySelectorAll('input, select');
             let isValid = true;
-
-            // Limpa mensagens de erro anteriores
-            errorMessage.style.display = 'none';
-            inputs.forEach(input => {
-                input.classList.remove('error');
-            });
+            errorMessage.style.display = 'none'; // Ocultar a mensagem de erro
 
             inputs.forEach(input => {
-                if (!input.value) {
+                if (!input.value && input.required) {
                     input.classList.add('error');
                     isValid = false;
+                } else {
+                    input.classList.remove('error');
                 }
             });
 
             if (!isValid) {
-                errorMessage.style.display = 'block';
+                errorMessage.style.display = 'block'; // Exibir a mensagem de erro
             }
 
-            return isValid; // Impede o envio do formulário se não for válido
+            return isValid; // Retornar false se não for válido para impedir o envio do formulário
         }
     </script>
 </body>

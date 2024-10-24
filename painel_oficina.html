@@ -3,7 +3,7 @@
 <head>
     <link rel="icon" href="assets/img/icon_Onficina.png">
     <meta charset="UTF-8">
-    <title>Painel da Oficina - ONFICINA</title>
+    <title>Painel da Empresa - ONFICINA</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -83,9 +83,9 @@
     <header>
         <div class="profile">
             <img src="assets/img/img-user.png" alt="Foto do Perfil">
-            <span><?php echo htmlspecialchars($nome_oficina); ?></span> <!-- Nome da oficina logada -->
+            <span><?php echo htmlspecialchars($nome_empresa); ?></span> <!-- Nome da empresa logada -->
         </div>
-        <form method="POST" action="painel_oficina.php" style="display: inline;"> <!-- Formulário para logout -->
+        <form method="POST" action="painel_empresa.php" style="display: inline;"> <!-- Formulário para logout -->
             <button type="submit" name="logout" class="logout">Sair</button> <!-- Botão de logout -->
         </form>
     </header>
