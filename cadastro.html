@@ -6,51 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/img/icon_Onficina.png">
     <title>Cadastro - ONFICINA</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .option-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            width: 90%;
-            max-width: 500px;
-            margin: 50px auto;
-        }
-
-        .option-container h2 {
-            margin-bottom: 30px;
-        }
-
-        .option-container button {
-            padding: 12px 25px;
-            margin: 10px;
-            background-color: #4157FF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        .option-container button:hover {
-            background-color: #3545d4;
-        }
-    </style>
+    <link rel="stylesheet" href=style.css>
 </head>
 
-<body>
+<body id="cadastro-page">
     <div class="option-container" id="option-container">
         <h2>Você deseja criar sua conta como:</h2>
         <button id="botao-usuario" aria-label="Cadastrar como Usuário">USUÁRIO</button>
@@ -67,16 +26,16 @@
                 const tipo = button.id.replace('botao-', ''); // Define o valor do tipo
                 switch (tipo) {
                     case 'usuario':
-                        window.location.href = 'cadastro_usuario.php'; // Redireciona para a página de cadastro de usuário
+                        window.location.href = 'cadastro_usuario.html'; // Redireciona para a página de cadastro de usuário
                         break;
                     case 'oficina':
-                        window.location.href = 'cadastro_oficina.php'; // Redireciona para a página de cadastro de oficina
+                        window.location.href = 'cadastro_oficina.html'; // Redireciona para a página de cadastro de oficina
                         break;
                     case 'desmontadora':
-                        window.location.href = 'cadastro_desmontadora.php'; // Redireciona para a página de cadastro de desmontadora
+                        window.location.href = 'cadastro_desmontadora.html'; // Redireciona para a página de cadastro de desmontadora
                         break;
                     case 'prestador':
-                        window.location.href = 'cadastro_prestador.php'; // Redireciona para a página de cadastro de prestador
+                        window.location.href = 'cadastro_prestador.html'; // Redireciona para a página de cadastro de prestador
                         break;
                     default:
                         break;

@@ -27,10 +27,12 @@ $oficina_id = $_SESSION['id']; // Obtendo o ID da oficina da sessão
 $nome_peca = $_POST['nome_peca'];
 $descricao = $_POST['descricao'];
 $valor = $_POST['valor'];
+$disponibilidade = isset($_POST['disponibilidade']) ? 1 : 0; // Se o checkbox estiver marcado, disponibilidade será 1
+$estoque = $_POST['estoque']; // Quantidade de peças em estoque
 
 // Prepare e bind para inserir a peça
-$stmt = $conn->prepare("INSERT INTO pecas_oficinas (nome_peca, descricao, valor, oficina_id) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssdi", $nome_peca, $descricao, $valor, $oficina_id);
+$stmt = $conn->prepare("INSERT INTO pecas_oficinas (nome_peca, descricao, valor, disponibilidade, estoque, oficina_id) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssdiii", $nome_peca, $descricao, $valor, $disponibilidade, $estoque, $oficina_id);
 
 if ($stmt->execute()) {
     $_SESSION['mensagem'] = "Peça cadastrada com sucesso!";

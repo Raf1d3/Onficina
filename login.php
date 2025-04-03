@@ -3,7 +3,7 @@
 session_start();
 
 // Conexão ao banco de dados
-$mysqli = new mysqli("localhost", "root", "", "onficina_bd");
+$mysqli = new mysqli('localhost', 'root', '', 'onficina_bd');
 
 // Verifica se a conexão foi bem-sucedida
 if ($mysqli->connect_error) {

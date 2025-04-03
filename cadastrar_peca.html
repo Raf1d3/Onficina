@@ -48,6 +48,25 @@
         .form-container button:hover {
             background-color: #3545d4;
         }
+
+        /* Ajuste para o alinhamento do checkbox e label */
+        .checkbox-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px; /* Espaço entre o checkbox e o texto */
+        }
+
+        .checkbox-container label {
+            margin: 0;
+            font-size: 16px; /* Ajusta o tamanho da fonte para o label */
+        }
+
     </style>
 </head>
 <body>
@@ -57,6 +76,15 @@
             <input type="text" name="nome_peca" placeholder="Nome da Peça" required>
             <textarea name="descricao" placeholder="Descrição" required></textarea>
             <input type="number" name="valor" placeholder="Valor (R$)" step="0.01" required>
+            
+            <!-- Ajuste do checkbox e rótulo "Disponível" -->
+            <div class="checkbox-container">
+                <input type="checkbox" name="disponibilidade" value="1" checked>
+                <label for="disponibilidade">Disponível</label>
+            </div>
+
+            <input type="number" name="estoque" placeholder="Quantidade em Estoque" required>
+            
             <button type="submit">Cadastrar</button>
         </form>
     </div>

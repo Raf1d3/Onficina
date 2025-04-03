@@ -1,99 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="icon" href="assets/img/icon_Onficina.png">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel da Oficina - ONFICINA</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .container {
-            margin: 20px;
-        }
-        .card {
-            background: #fff;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .card h2 {
-            margin-top: 0;
-            color: #007bff;
-        }
-        .card ul {
-            list-style: none;
-            padding: 0;
-        }
-        .card ul li {
-            padding: 10px 0;
-        }
-        .card ul li + li {
-            border-top: 1px solid #ddd;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-        }
-        .profile img {
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-        .logout {
-            color: white;
-            background-color: #dc3545;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .logout:hover {
-            background-color: #c82333;
-        }
-        .cadastrar {
-            margin-top: 20px;
-            display: inline-block;
-            color: white;
-            background-color: #28a745;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .cadastrar:hover {
-            background-color: #218838;
-        }
-    </style>
+    <link rel="icon" href="assets/img/icon_Onficina.png">
+    <link rel="stylesheet" href="style.css"> <!-- Arquivo CSS externo -->
 </head>
-<body>
+<body class="painel-usuario">
     <header>
-        <h1>Bem-vindo, <?php echo htmlspecialchars($nome_usuario); ?>!</h1>
-        <form method="POST" action="">
+        <h1>Bem vindo, <span id="nome_usuario">Usuário</span>!</h1>
+        <form method="POST" action="painel_usuario.php">
             <button class="logout" name="logout">Sair</button>
         </form>
     </header>
     <div class="container">
         <div class="card">
             <h2>Meus Veículos</h2>
-            <ul>
-                <?php echo $veiculos_html; ?>
+            <ul id="veiculos-list">
+                <!-- Lista de veículos será preenchida pelo PHP -->
             </ul>
-            <a href="cadastrar_veiculo_usuario.html" class="cadastrar">Cadastrar Novo Veículo</a>
+            <a href="cadastrar_veiculo_usuario.html" class="cadastrar">Cadastrar novo veículo</a>
         </div>
     </div>
+
+    <script>
+        function carregarDados() {
+            fetch('painel_usuario.php')
+                .then(response => response.text())
+                .then(data => {
+                    const nomeUsuario = data.match(/Nome do Usuário: (.+)/); 
+                    if (nomeUsuario) {
+                        document.getElementById('nome_usuario').innerText = nomeUsuario[1];
+                    }
+
+                    const listaVeiculos = data.match(/<li>(.*?)<\/li>/g);
+                    const veiculosList = document.getElementById('veiculos-list');
+                    if (listaVeiculos) {
+                        veiculosList.innerHTML = listaVeiculos.join('');
+                    }
+                });
+        }
+        window.onload = carregarDados;
+    </script>
 </body>
 </html>
